@@ -144,6 +144,7 @@
             "description": "Başlatıcının görünümünü özelleştirin.",
             "fontFamily": "Yazı Tipi",
             "colorTheme": "Renk Teması",
+            "themeMode": "Tema Modu",
             "fonts": {
                 "inter": "Inter (Varsayılan)",
                 "minecraft": "Minecraft",

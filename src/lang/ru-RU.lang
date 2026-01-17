@@ -144,6 +144,7 @@
             "description": "Настройте внешний вид лаунчера.",
             "fontFamily": "Шрифт",
             "colorTheme": "Цветовая тема",
+            "themeMode": "Режим темы",
             "fonts": {
                 "inter": "Inter (По умолчанию)",
                 "minecraft": "Minecraft",

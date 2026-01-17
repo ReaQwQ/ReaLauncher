@@ -144,6 +144,7 @@
             "description": "런처의 모양과 느낌을 사용자 정의합니다.",
             "fontFamily": "글꼴 패밀리",
             "colorTheme": "색상 테마",
+            "themeMode": "테마 모드",
             "fonts": {
                 "inter": "Inter (기본값)",
                 "minecraft": "Minecraft",

@@ -144,6 +144,7 @@
             "description": "Personaliza la apariencia del lanzador.",
             "fontFamily": "Fuente",
             "colorTheme": "Tema de Color",
+            "themeMode": "Modo de tema",
             "fonts": {
                 "inter": "Inter (Predeterminado)",
                 "minecraft": "Minecraft",

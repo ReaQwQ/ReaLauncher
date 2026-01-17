@@ -144,6 +144,7 @@
             "description": "تخصيص مظهر المشغل.",
             "fontFamily": "عائلة الخط",
             "colorTheme": "نسق الألوان",
+            "themeMode": "وضع السمة",
             "fonts": {
                 "inter": "Inter (افتراضي)",
                 "minecraft": "Minecraft",

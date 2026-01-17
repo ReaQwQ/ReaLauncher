@@ -374,12 +374,12 @@ export default function Settings() {
                                         <div className="space-y-10">
                                             <div className="space-y-8">
                                                 <div>
-                                                    <h2 className="text-2xl font-black text-dark-100 mb-2 italic tracking-tight uppercase">Appearance</h2>
-                                                    <p className="text-sm text-dark-400 mb-8">Customize the look and feel of the launcher.</p>
+                                                    <h2 className="text-2xl font-black text-dark-100 mb-2 italic tracking-tight uppercase">{t('settings.appearance.title')}</h2>
+                                                    <p className="text-sm text-dark-400 mb-8">{t('settings.appearance.description')}</p>
 
                                                     {/* Font Selection */}
                                                     <div className="space-y-4 mb-8">
-                                                        <p className="text-[10px] font-black text-dark-500 uppercase tracking-[0.3em] mb-4">Font Family</p>
+                                                        <p className="text-[10px] font-black text-dark-500 uppercase tracking-[0.3em] mb-4">{t('settings.appearance.fontFamily')}</p>
                                                         <div className="grid grid-cols-3 gap-4">
                                                             {[
                                                                 { id: 'inter', label: 'Inter (Default)', font: 'font-sans' },
@@ -403,27 +403,27 @@ export default function Settings() {
 
                                                     {/* Theme Selection */}
                                                     <div className="space-y-4">
-                                                        <p className="text-[10px] font-black text-dark-500 uppercase tracking-[0.3em] mb-4">Color Theme</p>
+                                                        <p className="text-[10px] font-black text-dark-500 uppercase tracking-[0.3em] mb-4">{t('settings.appearance.colorTheme')}</p>
                                                         <div className="grid grid-cols-2 gap-4">
                                                             {[
-                                                                { id: 'default', label: 'Violet', color: 'bg-violet-500', from: 'from-violet-500', to: 'to-violet-600', text: 'text-violet-400' },
-                                                                { id: 'emerald', label: 'Emerald', color: 'bg-emerald-500', from: 'from-emerald-500', to: 'to-emerald-600', text: 'text-emerald-400' },
-                                                                { id: 'rose', label: 'Rose', color: 'bg-rose-500', from: 'from-rose-500', to: 'to-rose-600', text: 'text-rose-400' },
-                                                                { id: 'amber', label: 'Amber', color: 'bg-amber-500', from: 'from-amber-500', to: 'to-amber-600', text: 'text-amber-400' },
-                                                                { id: 'blue', label: 'Blue', color: 'bg-blue-500', from: 'from-blue-500', to: 'to-blue-600', text: 'text-blue-400' },
-                                                                { id: 'orange', label: 'Orange', color: 'bg-orange-500', from: 'from-orange-500', to: 'to-orange-600', text: 'text-orange-400' },
-                                                            ].map((t) => (
+                                                                { id: 'default', label: t('settings.appearance.colors.default'), color: 'bg-violet-500', from: 'from-violet-500', to: 'to-violet-600', text: 'text-violet-400' },
+                                                                { id: 'emerald', label: t('settings.appearance.colors.emerald'), color: 'bg-emerald-500', from: 'from-emerald-500', to: 'to-emerald-600', text: 'text-emerald-400' },
+                                                                { id: 'rose', label: t('settings.appearance.colors.rose'), color: 'bg-rose-500', from: 'from-rose-500', to: 'to-rose-600', text: 'text-rose-400' },
+                                                                { id: 'amber', label: t('settings.appearance.colors.amber'), color: 'bg-amber-500', from: 'from-amber-500', to: 'to-amber-600', text: 'text-amber-400' },
+                                                                { id: 'blue', label: t('settings.appearance.colors.blue'), color: 'bg-blue-500', from: 'from-blue-500', to: 'to-blue-600', text: 'text-blue-400' },
+                                                                { id: 'orange', label: t('settings.appearance.colors.orange'), color: 'bg-orange-500', from: 'from-orange-500', to: 'to-orange-600', text: 'text-orange-400' },
+                                                            ].map((item) => (
                                                                 <button
-                                                                    key={t.id}
-                                                                    onClick={() => setTheme(t.id as any)}
-                                                                    className={`group relative overflow-hidden rounded-2xl border transition-all duration-300 text-left ${theme === t.id
+                                                                    key={item.id}
+                                                                    onClick={() => setTheme(item.id as any)}
+                                                                    className={`group relative overflow-hidden rounded-2xl border transition-all duration-300 text-left ${theme === item.id
                                                                         ? 'bg-dark-800 border-primary-500 ring-1 ring-primary-500/50 shadow-xl'
                                                                         : 'bg-dark-800/30 border-dark-700/50 hover:bg-dark-800/50 hover:border-dark-600 hover:-translate-y-1'
                                                                         }`}
                                                                 >
                                                                     {/* Preview Banner */}
-                                                                    <div className={`h-24 w-full bg-gradient-to-br ${t.from} ${t.to} relative p-4 flex flex-col justify-end`}>
-                                                                        {theme === t.id && (
+                                                                    <div className={`h-24 w-full bg-gradient-to-br ${item.from} ${item.to} relative p-4 flex flex-col justify-end`}>
+                                                                        {theme === item.id && (
                                                                             <div className="absolute top-3 right-3 bg-white/20 backdrop-blur-md p-1.5 rounded-full text-white shadow-sm">
                                                                                 <CheckCircle2 size={16} />
                                                                             </div>
@@ -435,18 +435,18 @@ export default function Settings() {
                                                                             <div className="w-16 h-8 rounded-lg bg-white/20 backdrop-blur-sm" />
                                                                         </div>
 
-                                                                        <p className="text-white font-black text-lg tracking-tight shadow-sm">{t.label}</p>
+                                                                        <p className="text-white font-black text-lg tracking-tight shadow-sm">{item.label}</p>
                                                                     </div>
 
                                                                     {/* Details */}
                                                                     <div className="p-4 flex items-center justify-between">
                                                                         <div className="flex gap-1.5">
-                                                                            <div className={`w-3 h-3 rounded-full ${t.color}`} />
-                                                                            <div className={`w-3 h-3 rounded-full ${t.color} opacity-60`} />
-                                                                            <div className={`w-3 h-3 rounded-full ${t.color} opacity-30`} />
+                                                                            <div className={`w-3 h-3 rounded-full ${item.color}`} />
+                                                                            <div className={`w-3 h-3 rounded-full ${item.color} opacity-60`} />
+                                                                            <div className={`w-3 h-3 rounded-full ${item.color} opacity-30`} />
                                                                         </div>
-                                                                        <p className={`text-[10px] font-bold uppercase tracking-wider ${theme === t.id ? t.text : 'text-dark-500 group-hover:text-dark-300'} transition-colors`}>
-                                                                            {theme === t.id ? 'Active' : 'Apply'}
+                                                                        <p className={`text-[10px] font-bold uppercase tracking-wider ${theme === item.id ? item.text : 'text-dark-500 group-hover:text-dark-300'} transition-colors`}>
+                                                                            {theme === item.id ? t('settings.appearance.active') : t('settings.appearance.apply')}
                                                                         </p>
                                                                     </div>
                                                                 </button>
@@ -456,7 +456,7 @@ export default function Settings() {
 
                                                     {/* Theme Mode Selection */}
                                                     <div className="space-y-4">
-                                                        <p className="text-[10px] font-black text-dark-500 uppercase tracking-[0.3em] mb-4">Theme Mode</p>
+                                                        <p className="text-[10px] font-black text-dark-500 uppercase tracking-[0.3em] mb-4">{t('settings.appearance.themeMode')}</p>
                                                         <div className="grid grid-cols-2 gap-4">
                                                             {[
                                                                 { id: 'dark', label: 'Dark', bg: 'bg-slate-900', border: 'border-slate-700', text: 'text-slate-200' },

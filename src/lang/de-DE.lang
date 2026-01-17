@@ -144,6 +144,7 @@
             "description": "Passen Sie das Aussehen des Launchers an.",
             "fontFamily": "Schriftart",
             "colorTheme": "Farbthema",
+            "themeMode": "Themenmodus",
             "fonts": {
                 "inter": "Inter (Standard)",
                 "minecraft": "Minecraft",

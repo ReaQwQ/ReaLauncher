@@ -145,6 +145,7 @@
             "description": "Customize the look and feel of the launcher.",
             "fontFamily": "Font Family",
             "colorTheme": "Color Theme",
+            "themeMode": "Theme Mode",
             "fonts": {
                 "inter": "Inter (Default)",
                 "minecraft": "Minecraft",

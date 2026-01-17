@@ -144,6 +144,7 @@
             "description": "Sesuaikan tampilan dan nuansa peluncur.",
             "fontFamily": "Keluarga Font",
             "colorTheme": "Tema Warna",
+            "themeMode": "Mode Tema",
             "fonts": {
                 "inter": "Inter (Default)",
                 "minecraft": "Minecraft",

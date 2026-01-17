@@ -144,6 +144,7 @@
             "description": "Personalizza l'aspetto del launcher.",
             "fontFamily": "Famiglia Font",
             "colorTheme": "Tema Colore",
+            "themeMode": "Modalità tema",
             "fonts": {
                 "inter": "Inter (Predefinito)",
                 "minecraft": "Minecraft",

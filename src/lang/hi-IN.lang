@@ -144,6 +144,7 @@
             "description": "लॉन्चर के रूप और अनुभव को अनुकूलित करें।",
             "fontFamily": "फ़ॉन्ट परिवार",
             "colorTheme": "रंग विषय",
+            "themeMode": "थीम मोड",
             "fonts": {
                 "inter": "Inter (डिफ़ॉल्ट)",
                 "minecraft": "Minecraft",

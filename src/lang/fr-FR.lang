@@ -144,6 +144,7 @@
             "description": "Personnalisez l'apparence du lanceur.",
             "fontFamily": "Police",
             "colorTheme": "Thème de couleur",
+            "themeMode": "Mode du thème",
             "fonts": {
                 "inter": "Inter (Défaut)",
                 "minecraft": "Minecraft",

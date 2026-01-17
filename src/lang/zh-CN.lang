@@ -144,6 +144,7 @@
             "description": "自定义启动器的外观。",
             "fontFamily": "字体系列",
             "colorTheme": "颜色主题",
+            "themeMode": "主题模式",
             "fonts": {
                 "inter": "Inter (默认)",
                 "minecraft": "Minecraft",

@@ -72,10 +72,10 @@
       "artifactName": "${productName}-${version}.Portable.${ext}"
     },
     "nsis": {
-      "oneClick": false,
+      "oneClick": true,
       "perMachine": false,
-      "allowToChangeInstallationDirectory": true,
-      "artifactName": "${productName}-${version}.Setup..${ext}",
+      "allowToChangeInstallationDirectory": false,
+      "artifactName": "${productName}-${version}.Setup.${ext}",
       "include": "build/installer.nsh"
     }
   }

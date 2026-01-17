@@ -145,6 +145,7 @@
             "description": "ランチャーの見た目をカスタマイズします。",
             "fontFamily": "フォント",
             "colorTheme": "テーマカラー",
+            "themeMode": "テーマモード",
             "fonts": {
                 "inter": "Inter (デフォルト)",
                 "minecraft": "Minecraft",
