@@ -252,6 +252,13 @@ export default function InstanceDetail() {
         }
     }, [selectedCrashReport, logType])
 
+    const [page, setPage] = useState(1)
+    const [totalPages, setTotalPages] = useState(0) // Optionally track total pages if we want better UI
+
+    useEffect(() => {
+        setPage(1)
+    }, [installTab, installSearchQuery, sortBy, viewCount, activePlatform, selectedCategories, selectedEnvironment])
+
     useEffect(() => {
         if (activeTab === 'install-content') {
             const timer = setTimeout(() => {
@@ -259,7 +266,7 @@ export default function InstanceDetail() {
             }, 500)
             return () => clearTimeout(timer)
         }
-    }, [installSearchQuery, sortBy, activePlatform, selectedCategories, selectedEnvironment, installTab, activeTab])
+    }, [page, viewCount, installSearchQuery, sortBy, activePlatform, selectedCategories, selectedEnvironment, installTab, activeTab])
 
     const handleSearch = async () => {
         if (!instance) return
@@ -273,8 +280,19 @@ export default function InstanceDetail() {
                 'shaders': 'project_type:shader'
             }
             if (typeMap[installTab]) facets.push([typeMap[installTab]])
-            facets.push([`versions:${instance.version}`])
-            if (instance.loader) facets.push([`categories:${instance.loader.type}`])
+
+            // Only strictly filter by loader for MODS. 
+            // Resource packs and shaders typically don't have loader constraints or use "minecraft" as dependency.
+            if (installTab === 'mods') {
+                if (instance.loader) facets.push([`categories:${instance.loader.type}`])
+                facets.push([`versions:${instance.version}`])
+            } else {
+                // For resource packs/shaders, verify if version filtering is desired. 
+                // Often resources are version-agnostic or have loose matching, but strict filtering is safer.
+                // User reported issues, likely due to loader. Sticking to version filter is usually fine.
+                facets.push([`versions:${instance.version}`])
+            }
+
             selectedCategories.forEach(cat => facets.push([`categories:${cat.toLowerCase()}`]))
             if (selectedEnvironment) facets.push([`categories:${selectedEnvironment.toLowerCase()}`])
 
@@ -283,9 +301,13 @@ export default function InstanceDetail() {
                 facets: facets,
                 index: sortBy as any,
                 limit: viewCount,
-                offset: 0
+                offset: (page - 1) * viewCount
             })
             setSearchResults(results.hits || [])
+            // Modrinth returns total_hits. We can use it.
+            if (results.total_hits) {
+                setTotalPages(Math.ceil(results.total_hits / viewCount))
+            }
         } catch (error) {
             console.error('Search failed:', error)
         } finally {
@@ -1168,6 +1190,7 @@ export default function InstanceDetail() {
                                         value={viewCount}
                                         onChange={setViewCount}
                                         options={[
+                                            { value: 5, label: 5 },
                                             { value: 10, label: 10 },
                                             { value: 20, label: 20 },
                                             { value: 50, label: 50 },
@@ -1311,6 +1334,39 @@ export default function InstanceDetail() {
                                     </div>
                                 )}
                             </div>
+
+                            {/* Pagination */}
+                            {searchResults.length > 0 && (
+                                <div className="flex items-center justify-between border-t border-dark-700 pt-3 mt-1 px-1">
+                                    <button
+                                        onClick={() => setPage(p => Math.max(1, p - 1))}
+                                        disabled={page === 1 || isSearching}
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${page === 1 || isSearching
+                                            ? 'text-dark-500 cursor-not-allowed'
+                                            : 'text-dark-200 hover:bg-dark-700 hover:text-dark-100'
+                                            }`}
+                                    >
+                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" /></svg>
+                                        Previous
+                                    </button>
+
+                                    <div className="flex items-center gap-2">
+                                        <span className="text-xs text-dark-400">Page {page} {totalPages > 0 && `of ${totalPages}`}</span>
+                                    </div>
+
+                                    <button
+                                        onClick={() => setPage(p => p + 1)}
+                                        disabled={searchResults.length < viewCount || (totalPages > 0 && page >= totalPages) || isSearching}
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${searchResults.length < viewCount || (totalPages > 0 && page >= totalPages) || isSearching
+                                            ? 'text-dark-500 cursor-not-allowed'
+                                            : 'text-dark-200 hover:bg-dark-700 hover:text-dark-100'
+                                            }`}
+                                    >
+                                        Next
+                                        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" /></svg>
+                                    </button>
+                                </div>
+                            )}
                         </div>
 
                         {/* Filters Sidebar */}

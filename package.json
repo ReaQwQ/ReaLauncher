@@ -1,6 +1,6 @@
 {
   "name": "realauncher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "A beautiful Minecraft Mod Launcher",
   "main": "dist-electron/main.js",
@@ -14,7 +14,8 @@
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "lint": "eslint src electron --ext .ts,.tsx",
-    "clean": "rimraf dist dist-electron release"
+    "clean": "rimraf dist dist-electron release",
+    "commit": "cz"
   },
   "files": [
     "dist",
@@ -46,6 +47,8 @@
     "@types/react-dom": "^18.3.4",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "electron": "^34.0.0",
     "electron-builder": "^25.1.8",
     "postcss": "^8.4.49",
@@ -77,6 +80,11 @@
       "allowToChangeInstallationDirectory": false,
       "artifactName": "${productName}-${version}.Setup.${ext}",
       "include": "build/installer.nsh"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
     }
   }
 }
