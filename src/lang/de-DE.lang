@@ -151,6 +151,7 @@
                 "system": "System-UI"
             },
             "colors": {
+                "default": "Standard",
                 "violet": "Violett",
                 "emerald": "Smaragd",
                 "rose": "Rosa",

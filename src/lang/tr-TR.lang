@@ -151,6 +151,7 @@
                 "system": "Sistem Arayüzü"
             },
             "colors": {
+                "default": "Varsayılan",
                 "violet": "Menekşe",
                 "emerald": "Zümrüt",
                 "rose": "Gül",

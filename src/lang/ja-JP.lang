@@ -152,6 +152,7 @@
                 "system": "システムUI"
             },
             "colors": {
+                "default": "デフォルト",
                 "violet": "バイオレット",
                 "emerald": "エメラルド",
                 "rose": "ローズ",

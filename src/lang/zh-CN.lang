@@ -151,6 +151,7 @@
                 "system": "系统界面"
             },
             "colors": {
+                "default": "默认",
                 "violet": "紫罗兰",
                 "emerald": "祖母绿",
                 "rose": "玫瑰红",

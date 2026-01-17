@@ -151,6 +151,7 @@
                 "system": "系統介面"
             },
             "colors": {
+                "default": "預設",
                 "violet": "紫羅蘭",
                 "emerald": "祖母綠",
                 "rose": "玫瑰紅",

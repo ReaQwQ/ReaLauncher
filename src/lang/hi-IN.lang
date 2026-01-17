@@ -151,6 +151,7 @@
                 "system": "सिस्टम UI"
             },
             "colors": {
+                "default": "डिफ़ॉルト",
                 "violet": "बैंगनी",
                 "emerald": "पन्ना",
                 "rose": "गुलाब",

@@ -151,6 +151,7 @@
                 "system": "UI Sistem"
             },
             "colors": {
+                "default": "Bawaan",
                 "violet": "Violet",
                 "emerald": "Zamrud",
                 "rose": "Mawar",

@@ -151,6 +151,7 @@
                 "system": "UI di Sistema"
             },
             "colors": {
+                "default": "Predefinito",
                 "violet": "Viola",
                 "emerald": "Smeraldo",
                 "rose": "Rosa",

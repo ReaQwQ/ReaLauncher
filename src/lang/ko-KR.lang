@@ -151,6 +151,7 @@
                 "system": "시스템 UI"
             },
             "colors": {
+                "default": "기본",
                 "violet": "바이올렛",
                 "emerald": "에메랄드",
                 "rose": "로즈",

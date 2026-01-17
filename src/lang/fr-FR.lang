@@ -151,6 +151,7 @@
                 "system": "Interface Système"
             },
             "colors": {
+                "default": "Par défaut",
                 "violet": "Violet",
                 "emerald": "Émeraude",
                 "rose": "Rose",
