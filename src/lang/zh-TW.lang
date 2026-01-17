@@ -1,0 +1,314 @@
+{
+    "common": {
+        "cancel": "取消",
+        "create": "建立",
+        "delete": "刪除",
+        "save": "儲存",
+        "none": "無",
+        "loading": "載入中...",
+        "fetching": "獲取中...",
+        "select": "選擇",
+        "back": "返回",
+        "view_all": "查看全部",
+        "no_results": "找不到結果",
+        "not_found": "找不到內容"
+    },
+    "sidebar": {
+        "home": "首頁",
+        "instances": "實例",
+        "settings": "設定",
+        "console": "控制台"
+    },
+    "instances": {
+        "title": "實例",
+        "create_new": "新實例",
+        "no_instances": "找不到實例",
+        "count_label": "個實例已註冊",
+        "modal": {
+            "title": "新實例",
+            "name_label": "實例名稱 *",
+            "name_placeholder": "我的實例",
+            "desc_label": "描述 (可選)",
+            "desc_placeholder": "實例描述...",
+            "loader_label": "模組載入器",
+            "loader_version_label": "載入器版本",
+            "mc_version_label": "Minecraft 版本",
+            "filter_label": "過濾",
+            "search_placeholder": "搜尋版本...",
+            "no_matching_versions": "找不到相符版本",
+            "tab_vanilla": "原版 / 模組",
+            "tab_modpack": "模組包"
+        },
+        "card": {
+            "last_played": "上次遊玩",
+            "mods_count": "模組",
+            "play": "啟動",
+            "add_mod": "新增模組",
+            "edit_mods": "編輯模組"
+        }
+    },
+    "settings": {
+        "title": "設定",
+        "description": "管理應用程式設定",
+        "categories": {
+            "account": "帳戶",
+            "minecraft": "Minecraft",
+            "general": "一般",
+            "appearance": "外觀",
+            "about": "關於"
+        },
+        "account": {
+            "title": "帳戶管理",
+            "subtitle": "目前登入的 Microsoft 帳戶",
+            "not_logged_in": "未登入",
+            "login_btn": "使用 Microsoft 登入",
+            "logout_btn": "登出",
+            "header_title": "帳戶管理",
+            "header_desc": "管理已登入的帳戶資訊。",
+            "active": "活躍",
+            "xbox_account": "Xbox Live 帳戶",
+            "other_accounts": "其他帳戶",
+            "switch": "切換",
+            "add_account": "新增帳戶"
+        },
+        "minecraft": {
+            "title": "Minecraft 設定",
+            "java_path": "Java 路徑",
+            "java_desc": "Java 執行檔路徑",
+            "auto_detect": "自動偵測",
+            "browse": "瀏覽",
+            "memory_title": "記憶體分配",
+            "memory_min": "最小記憶體",
+            "memory_max": "最大記憶體",
+            "java_versions_found": "找到 {count} 個 Java 版本",
+            "runtime_title": "執行環境",
+            "runtime_desc": "管理 Minecraft 運行時和記憶體設定。",
+            "java_installations": "Java 安裝",
+            "ram_allocation": "RAM 分配",
+            "min_ram": "最小 (Xms)",
+            "max_ram": "最大 (Xmx)",
+            "install": "安裝",
+            "detect": "偵測",
+            "lts": "LTS",
+            "latest": "最新",
+            "legacy": "舊版",
+            "not_set": "未設定",
+            "test_btn": "測試",
+            "test_title": "測試安裝",
+            "valid": "有效",
+            "failed": "失敗"
+        },
+        "general": {
+            "title": "一般設定",
+            "language": "語言",
+            "language_desc": "選擇介面語言",
+            "launcher_behavior": "啟動器行為",
+            "close_on_launch": "遊戲啟動時關閉啟動器",
+            "launcher_preferences": "啟動器偏好",
+            "advanced_title": "進階設定",
+            "root_dir": "根目錄",
+            "root_dir_desc": "啟動器儲存所有檔案的目錄。變更將在重啟後生效。",
+            "change": "變更",
+            "app_cache": "應用程式快取",
+            "app_cache_desc": "啟動器快取資料以加快載入。清除以強制重新載入。",
+            "purge_cache": "清除快取",
+            "max_downloads": "最大並發下載數",
+            "max_downloads_desc": "同時下載的最大檔案數。網路較差時降低。",
+            "max_writes": "最大並發寫入數",
+            "max_writes_desc": "同時寫入磁碟的最大檔案數。出現 I/O 錯誤時降低。"
+        },
+        "about": {
+            "title": "關於 ReaLauncher",
+            "version": "版本",
+            "author": "作者",
+            "links": "連結",
+            "github": "GitHub 儲存庫",
+            "discord": "Discord 伺服器",
+            "tagline": "下一代 Minecraft 啟動器",
+            "build_info": "v0.2.0-BETA • 高級組建",
+            "source_code": "原始碼",
+            "community": "社群",
+            "copyright": "© 2026 ReaLauncher 專案。基於 MIT 授權分發。Minecraft 是 Mojang AB 的商標。"
+        },
+        "browser": {
+            "title": "檔案瀏覽器",
+            "select_file": "選擇檔案",
+            "select_folder": "選擇資料夾",
+            "quick_access": "快速存取",
+            "home": "首頁",
+            "drives": "磁碟機",
+            "empty": "此資料夾是空的"
+        },
+        "appearance": {
+            "title": "外觀",
+            "description": "自訂啟動器的外觀。",
+            "fontFamily": "字型系列",
+            "colorTheme": "色彩主題",
+            "fonts": {
+                "inter": "Inter (預設)",
+                "minecraft": "Minecraft",
+                "system": "系統介面"
+            },
+            "colors": {
+                "violet": "紫羅蘭",
+                "emerald": "祖母綠",
+                "rose": "玫瑰紅",
+                "amber": "琥珀色",
+                "blue": "藍色",
+                "orange": "橙色"
+            },
+            "active": "目前使用",
+            "apply": "套用"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "存取被拒",
+            "desc": "無法透過標準網頁瀏覽器存取 ReaLauncher 介面。請使用官方桌面執行檔啟動應用程式。",
+            "code": "未授權的瀏覽器存取嘗試"
+        },
+        "notifications": {
+            "downloading": "下載中",
+            "downloading_mc": "下載 Minecraft",
+            "downloading_modpack": "下載模組包",
+            "installing_java": "安裝 Java",
+            "installing_loader": "安裝載入器",
+            "downloading_assets": "下載資源",
+            "verifying": "驗證檔案",
+            "detecting": "偵測內容",
+            "loading_game": "載入遊戲"
+        },
+        "ready_to_play": "準備就緒",
+        "last_played": "上次遊玩 {date}",
+        "welcome_back": "歡迎回來，{name}！",
+        "welcome_description": "準備好開始下一次冒險了嗎？建立新實例或在下方發現熱門模組包。",
+        "actions": {
+            "jump_in": "開始遊戲"
+        },
+        "loaders": {
+            "vanilla": "原版"
+        },
+        "sections": {
+            "discover_modpack": "發現模組包",
+            "discover_mod": "發現模組"
+        },
+        "console": {
+            "logs_count": "日誌",
+            "filtered_from": "(從 {count} 條中過濾)",
+            "export": "匯出",
+            "clear": "清除",
+            "search_placeholder": "搜尋日誌...",
+            "auto_scroll_on": "自動捲動: 開",
+            "auto_scroll_off": "自動捲動: 關",
+            "no_logs": "暫無日誌"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "模組包",
+            "mod": "模組",
+            "resourcepack": "資源包",
+            "datapack": "資料包",
+            "shader": "光影"
+        },
+        "sort": {
+            "relevance": "相關度",
+            "downloads": "下載量",
+            "follows": "追蹤數",
+            "newest": "最新",
+            "updated": "最近更新"
+        },
+        "search_placeholder": "搜尋內容..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "內容",
+            "worlds": "存檔",
+            "logs": "日誌",
+            "install": "安裝內容"
+        },
+        "content_types": {
+            "mods": "模組",
+            "resourcepacks": "資源包",
+            "shaders": "光影",
+            "datapacks": "資料包"
+        },
+        "actions": {
+            "back": "返回實例",
+            "settings": "設定",
+            "open_folder": "開啟資料夾",
+            "launching": "正在啟動...",
+            "play": "啟動",
+            "change_icon": "變更"
+        },
+        "filters": {
+            "title": "過濾",
+            "all": "全部",
+            "enabled": "已啟用",
+            "disabled": "已停用",
+            "no_metadata": "無元資料",
+            "refresh": "重新整理"
+        },
+        "search_placeholder": "搜尋專案..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "自訂",
+            "modpack": "模組包",
+            "launcher": "匯入"
+        },
+        "custom": {
+            "icon_select": "選擇圖示"
+        },
+        "modpack": {
+            "search_placeholder": "搜尋模組包...",
+            "import_file": "從檔案匯入"
+        },
+        "launcher": {
+            "scan": "掃描",
+            "select_all": "全選",
+            "deselect_all": "取消全選",
+            "selected_count": "已選 {count} / {total}",
+            "import_selected": "匯入選取項目"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "描述",
+            "versions": "版本",
+            "gallery": "畫廊"
+        },
+        "info": {
+            "by": "作者 {authors}",
+            "downloads": "下載",
+            "followers": "追蹤者",
+            "updated": "更新於 {date}",
+            "created": "建立於",
+            "license": "授權",
+            "external_links": "外部連結",
+            "view_on": "在 {source} 上查看"
+        },
+        "actions": {
+            "back_to_instance": "返回實例",
+            "installed": "已安裝",
+            "install": "安裝"
+        },
+        "versions": {
+            "game_version": "遊戲版本",
+            "all_versions": "所有版本",
+            "channels": "通道",
+            "table": {
+                "name": "名稱",
+                "version": "遊戲版本",
+                "platforms": "平台",
+                "published": "發佈時間",
+                "downloads": "下載量",
+                "actions": "操作"
+            },
+            "no_versions": "找不到版本"
+        },
+        "gallery": {
+            "no_images": "暫無圖片"
+        }
+    }
+}

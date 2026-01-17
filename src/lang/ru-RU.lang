@@ -1,0 +1,314 @@
+{
+    "common": {
+        "cancel": "Отмена",
+        "create": "Создать",
+        "delete": "Удалить",
+        "save": "Сохранить",
+        "none": "Нет",
+        "loading": "Загрузка...",
+        "fetching": "Получение...",
+        "select": "Выбрать",
+        "back": "Назад",
+        "view_all": "Показать все",
+        "no_results": "Результатов не найдено",
+        "not_found": "Контент не найден"
+    },
+    "sidebar": {
+        "home": "Главная",
+        "instances": "Сборки",
+        "settings": "Настройки",
+        "console": "Консоль"
+    },
+    "instances": {
+        "title": "Сборки",
+        "create_new": "Новая сборка",
+        "no_instances": "Сборки не найдены",
+        "count_label": "сборок зарегистрировано",
+        "modal": {
+            "title": "Новая сборка",
+            "name_label": "Имя сборки *",
+            "name_placeholder": "Моя сборка",
+            "desc_label": "Описание (опционально)",
+            "desc_placeholder": "Описание сборки...",
+            "loader_label": "Загрузчик модов",
+            "loader_version_label": "Версия загрузчика",
+            "mc_version_label": "Версия Minecraft",
+            "filter_label": "Фильтры",
+            "search_placeholder": "Поиск версий...",
+            "no_matching_versions": "Подходящие версии не найдены",
+            "tab_vanilla": "Vanilla / Моды",
+            "tab_modpack": "Модпак"
+        },
+        "card": {
+            "last_played": "Запущено",
+            "mods_count": "Модов",
+            "play": "Играть",
+            "add_mod": "Добавить мод",
+            "edit_mods": "Изм. моды"
+        }
+    },
+    "settings": {
+        "title": "Настройки",
+        "description": "Управление настройками приложения",
+        "categories": {
+            "account": "Аккаунт",
+            "minecraft": "Minecraft",
+            "general": "Общие",
+            "appearance": "Внешний вид",
+            "about": "О программе"
+        },
+        "account": {
+            "title": "Управление аккаунтом",
+            "subtitle": "Текущий аккаунт Microsoft",
+            "not_logged_in": "Не выполнен вход",
+            "login_btn": "Войти через Microsoft",
+            "logout_btn": "Выйти",
+            "header_title": "Управление аккаунтом",
+            "header_desc": "Управление информацией о текущем аккаунте.",
+            "active": "Активен",
+            "xbox_account": "Аккаунт Xbox Live",
+            "other_accounts": "Другие аккаунты",
+            "switch": "Переключить",
+            "add_account": "Добавить аккаунт"
+        },
+        "minecraft": {
+            "title": "Настройки Minecraft",
+            "java_path": "Путь к Java",
+            "java_desc": "Путь к исполняемому файлу Java",
+            "auto_detect": "Авто",
+            "browse": "Обзор",
+            "memory_title": "Выделение памяти",
+            "memory_min": "Мин. память",
+            "memory_max": "Макс. память",
+            "java_versions_found": "Найдено версий Java: {count}",
+            "runtime_title": "Среда выполнения",
+            "runtime_desc": "Управление средой Minecraft и настройками памяти.",
+            "java_installations": "Установленные Java",
+            "ram_allocation": "Выделение ОЗУ",
+            "min_ram": "Минимум (Xms)",
+            "max_ram": "Максимум (Xmx)",
+            "install": "Установить",
+            "detect": "Найти",
+            "lts": "LTS",
+            "latest": "Последняя",
+            "legacy": "Устаревшая",
+            "not_set": "Не задано",
+            "test_btn": "Тест",
+            "test_title": "Тест установки",
+            "valid": "Валидно",
+            "failed": "Ошибка"
+        },
+        "general": {
+            "title": "Общие настройки",
+            "language": "Язык",
+            "language_desc": "Выберите язык интерфейса",
+            "launcher_behavior": "Поведение лаунчера",
+            "close_on_launch": "Закрывать лаунчер при запуске игры",
+            "launcher_preferences": "Предпочтения лаунчера",
+            "advanced_title": "Расширенные настройки",
+            "root_dir": "Корневой каталог",
+            "root_dir_desc": "Каталог, где лаунчер хранит все файлы. Изменения применятся после перезапуска.",
+            "change": "Изменить",
+            "app_cache": "Кэш приложения",
+            "app_cache_desc": "Лаунчер кэширует данные для ускорения загрузки. Очистите для принудительной перезагрузки.",
+            "purge_cache": "Очистить кэш",
+            "max_downloads": "Макс. одновременных загрузок",
+            "max_downloads_desc": "Макс. файлов загружаемых одновременно. Уменьшите при плохом интернете.",
+            "max_writes": "Макс. одновременных записей",
+            "max_writes_desc": "Макс. файлов записываемых на диск одновременно. Уменьшите при ошибках ввода/вывода."
+        },
+        "about": {
+            "title": "О ReaLauncher",
+            "version": "Версия",
+            "author": "Автор",
+            "links": "Ссылки",
+            "github": "Репозиторий GitHub",
+            "discord": "Сервер Discord",
+            "tagline": "Minecraft Лаунчер Нового Поколения",
+            "build_info": "v0.2.0-BETA • PREMIUM BUILD",
+            "source_code": "Исходный код",
+            "community": "Сообщество",
+            "copyright": "© 2026 ReaLauncher Project. Распространяется по лицензии MIT. Minecraft является торговой маркой Mojang AB."
+        },
+        "browser": {
+            "title": "Файловый менеджер",
+            "select_file": "Выбрать файл",
+            "select_folder": "Выбрать папку",
+            "quick_access": "Быстрый доступ",
+            "home": "Главная",
+            "drives": "Диски",
+            "empty": "Эта папка пуста"
+        },
+        "appearance": {
+            "title": "Внешний вид",
+            "description": "Настройте внешний вид лаунчера.",
+            "fontFamily": "Шрифт",
+            "colorTheme": "Цветовая тема",
+            "fonts": {
+                "inter": "Inter (По умолчанию)",
+                "minecraft": "Minecraft",
+                "system": "Системный"
+            },
+            "colors": {
+                "violet": "Фиолетовый",
+                "emerald": "Изумрудный",
+                "rose": "Розовый",
+                "amber": "Янтарный",
+                "blue": "Синий",
+                "orange": "Оранжевый"
+            },
+            "active": "Активно",
+            "apply": "Применить"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "ДОСТУП ЗАПРЕЩЕН",
+            "desc": "Интерфейс ReaLauncher недоступен через стандартный веб-браузер. Пожалуйста, запустите приложение, используя официальный исполняемый файл.",
+            "code": "НЕСАНКЦИОНИРОВАННАЯ_ПОПЫТКА_ДОСТУПА"
+        },
+        "notifications": {
+            "downloading": "Загрузка",
+            "downloading_mc": "Загрузка Minecraft",
+            "downloading_modpack": "Загрузка Модпака",
+            "installing_java": "Установка Java",
+            "installing_loader": "Установка Загрузчика",
+            "downloading_assets": "Загрузка Ресурсов",
+            "verifying": "Проверка файлов",
+            "detecting": "Обнаружение контента",
+            "loading_game": "Загрузка игры"
+        },
+        "ready_to_play": "Готово к игре",
+        "last_played": "Запущено {date}",
+        "welcome_back": "С возвращением, {name}!",
+        "welcome_description": "Готовы к следующему приключению? Создайте новую сборку или найдите популярные модпаки ниже.",
+        "actions": {
+            "jump_in": "ИГРАТЬ"
+        },
+        "loaders": {
+            "vanilla": "Vanilla"
+        },
+        "sections": {
+            "discover_modpack": "Найти модпак",
+            "discover_mod": "Найти моды"
+        },
+        "console": {
+            "logs_count": "логов",
+            "filtered_from": "(отфильтровано из {count})",
+            "export": "Экспорт",
+            "clear": "Очистить",
+            "search_placeholder": "Поиск логов...",
+            "auto_scroll_on": "Автопрокрутка: ВКЛ",
+            "auto_scroll_off": "Автопрокрутка: ВЫКЛ",
+            "no_logs": "Логов пока нет"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "Модпаки",
+            "mod": "Моды",
+            "resourcepack": "Ресурспаки",
+            "datapack": "Датапаки",
+            "shader": "Шейдеры"
+        },
+        "sort": {
+            "relevance": "Релевантность",
+            "downloads": "Загрузки",
+            "follows": "Подписчики",
+            "newest": "Новые",
+            "updated": "Обновленные"
+        },
+        "search_placeholder": "Поиск контента..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "Контент",
+            "worlds": "Миры",
+            "logs": "Логи",
+            "install": "Установка"
+        },
+        "content_types": {
+            "mods": "Моды",
+            "resourcepacks": "Ресурспаки",
+            "shaders": "Шейдеры",
+            "datapacks": "Датапаки"
+        },
+        "actions": {
+            "back": "Назад к сборкам",
+            "settings": "Настройки",
+            "open_folder": "Открыть папку",
+            "launching": "Запуск...",
+            "play": "Играть",
+            "change_icon": "Изменить"
+        },
+        "filters": {
+            "title": "Фильтр",
+            "all": "Все",
+            "enabled": "Включено",
+            "disabled": "Выключено",
+            "no_metadata": "Без метаданных",
+            "refresh": "Обновить"
+        },
+        "search_placeholder": "Поиск проектов..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "Свой",
+            "modpack": "Модпак",
+            "launcher": "Импорт"
+        },
+        "custom": {
+            "icon_select": "Выбрать иконку"
+        },
+        "modpack": {
+            "search_placeholder": "Поиск модпаков...",
+            "import_file": "Импорт из файла"
+        },
+        "launcher": {
+            "scan": "Сканировать",
+            "select_all": "Выбрать все",
+            "deselect_all": "Отменить все",
+            "selected_count": "Выбрано {count} из {total}",
+            "import_selected": "Импортировать"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "Описание",
+            "versions": "Версии",
+            "gallery": "Галерея"
+        },
+        "info": {
+            "by": "от {authors}",
+            "downloads": "скачиваний",
+            "followers": "подписчиков",
+            "updated": "Обновлено {date}",
+            "created": "Создано",
+            "license": "Лицензия",
+            "external_links": "Внешние ссылки",
+            "view_on": "Посетить {source}"
+        },
+        "actions": {
+            "back_to_instance": "Назад к сборке",
+            "installed": "Установлено",
+            "install": "Установить"
+        },
+        "versions": {
+            "game_version": "Версия игры",
+            "all_versions": "Все версии",
+            "channels": "Каналы",
+            "table": {
+                "name": "Имя",
+                "version": "Версия игры",
+                "platforms": "Платформы",
+                "published": "Опубликовано",
+                "downloads": "Скачивания",
+                "actions": "Действия"
+            },
+            "no_versions": "Версии не найдены"
+        },
+        "gallery": {
+            "no_images": "Изображений нет"
+        }
+    }
+}

@@ -1,0 +1,314 @@
+{
+    "common": {
+        "cancel": "Abbrechen",
+        "create": "Erstellen",
+        "delete": "Löschen",
+        "save": "Speichern",
+        "none": "Keine",
+        "loading": "Lädt...",
+        "fetching": "Rufe ab...",
+        "select": "Auswählen",
+        "back": "Zurück",
+        "view_all": "Alle anzeigen",
+        "no_results": "Keine Ergebnisse gefunden",
+        "not_found": "Inhalt nicht gefunden"
+    },
+    "sidebar": {
+        "home": "Startseite",
+        "instances": "Instanzen",
+        "settings": "Einstellungen",
+        "console": "Konsole"
+    },
+    "instances": {
+        "title": "Instanzen",
+        "create_new": "Neue Instanz",
+        "no_instances": "Keine Instanzen gefunden",
+        "count_label": "Instanzen registriert",
+        "modal": {
+            "title": "Neue Instanz",
+            "name_label": "Instanzname *",
+            "name_placeholder": "Meine Instanz",
+            "desc_label": "Beschreibung (Optional)",
+            "desc_placeholder": "Instanzbeschreibung...",
+            "loader_label": "Mod-Loader",
+            "loader_version_label": "Loader-Version",
+            "mc_version_label": "Minecraft-Version",
+            "filter_label": "Filter",
+            "search_placeholder": "Versionen suchen...",
+            "no_matching_versions": "Keine passenden Versionen gefunden",
+            "tab_vanilla": "Vanilla / Modded",
+            "tab_modpack": "Modpack"
+        },
+        "card": {
+            "last_played": "Zuletzt gespielt",
+            "mods_count": "Mods",
+            "play": "Spielen",
+            "add_mod": "Mod hinzufügen",
+            "edit_mods": "Mods bearbeiten"
+        }
+    },
+    "settings": {
+        "title": "Einstellungen",
+        "description": "Anwendungseinstellungen verwalten",
+        "categories": {
+            "account": "Konto",
+            "minecraft": "Minecraft",
+            "general": "Allgemein",
+            "appearance": "Aussehen",
+            "about": "Über"
+        },
+        "account": {
+            "title": "Kontoverwaltung",
+            "subtitle": "Aktuell angemeldetes Microsoft-Konto",
+            "not_logged_in": "Nicht angemeldet",
+            "login_btn": "Mit Microsoft anmelden",
+            "logout_btn": "Abmelden",
+            "header_title": "Kontoverwaltung",
+            "header_desc": "Angemeldete Kontoinformationen verwalten.",
+            "active": "Aktiv",
+            "xbox_account": "Xbox Live Konto",
+            "other_accounts": "Andere Konten",
+            "switch": "Wechseln",
+            "add_account": "Weiteres Konto hinzufügen"
+        },
+        "minecraft": {
+            "title": "Minecraft-Einstellungen",
+            "java_path": "Java-Pfad",
+            "java_desc": "Pfad zur Java-Ausführungsdatei",
+            "auto_detect": "Automatisch erkennen",
+            "browse": "Durchsuchen",
+            "memory_title": "Speicherzuweisung",
+            "memory_min": "Min Speicher",
+            "memory_max": "Max Speicher",
+            "java_versions_found": "{count} Java-Versionen gefunden",
+            "runtime_title": "Laufzeitumgebung",
+            "runtime_desc": "Minecraft-Laufzeit und Speichereinstellungen verwalten.",
+            "java_installations": "Java-Installationen",
+            "ram_allocation": "RAM-Zuweisung",
+            "min_ram": "Minimum (Xms)",
+            "max_ram": "Maximum (Xmx)",
+            "install": "Installieren",
+            "detect": "Erkennen",
+            "lts": "LTS",
+            "latest": "Neueste",
+            "legacy": "Veraltet",
+            "not_set": "Nicht gesetzt",
+            "test_btn": "Testen",
+            "test_title": "Installation testen",
+            "valid": "Gültig",
+            "failed": "Fehlgeschlagen"
+        },
+        "general": {
+            "title": "Allgemeine Einstellungen",
+            "language": "Sprache",
+            "language_desc": "Wähle die Oberflächensprache",
+            "launcher_behavior": "Launcher-Verhalten",
+            "close_on_launch": "Launcher schließen, wenn das Spiel startet",
+            "launcher_preferences": "Launcher-Präferenzen",
+            "advanced_title": "Erweiterte App-Einstellungen",
+            "root_dir": "Wurzelverzeichnis",
+            "root_dir_desc": "Hier speichert der Launcher alle Dateien. Änderungen werden nach Neustart wirksam.",
+            "change": "Ändern",
+            "app_cache": "App-Cache",
+            "app_cache_desc": "Der Launcher speichert Daten zwischen. Leeren, um Neuladen zu erzwingen.",
+            "purge_cache": "Cache leeren",
+            "max_downloads": "Max gleichzeitige Downloads",
+            "max_downloads_desc": "Max Dateien gleichzeitig herunterladen. Verringern bei schlechtem Internet.",
+            "max_writes": "Max gleichzeitige Schreibvorgänge",
+            "max_writes_desc": "Max Dateien gleichzeitig auf Disk schreiben. Verringern bei I/O-Fehlern."
+        },
+        "about": {
+            "title": "Über ReaLauncher",
+            "version": "Version",
+            "author": "Autor",
+            "links": "Links",
+            "github": "GitHub-Repository",
+            "discord": "Discord-Server",
+            "tagline": "Next-Gen Minecraft Launcher",
+            "build_info": "v0.2.0-BETA • PREMIUM BUILD",
+            "source_code": "Quellcode",
+            "community": "Community",
+            "copyright": "© 2026 ReaLauncher Project. Veröffentlicht unter MIT-Lizenz. Minecraft ist eine Marke von Mojang AB."
+        },
+        "browser": {
+            "title": "Dateibrowser",
+            "select_file": "Datei auswählen",
+            "select_folder": "Ordner auswählen",
+            "quick_access": "Schnellzugriff",
+            "home": "Startseite",
+            "drives": "Laufwerke",
+            "empty": "Dieser Ordner ist leer"
+        },
+        "appearance": {
+            "title": "Aussehen",
+            "description": "Passen Sie das Aussehen des Launchers an.",
+            "fontFamily": "Schriftart",
+            "colorTheme": "Farbthema",
+            "fonts": {
+                "inter": "Inter (Standard)",
+                "minecraft": "Minecraft",
+                "system": "System-UI"
+            },
+            "colors": {
+                "violet": "Violett",
+                "emerald": "Smaragd",
+                "rose": "Rosa",
+                "amber": "Bernstein",
+                "blue": "Blau",
+                "orange": "Orange"
+            },
+            "active": "Aktiv",
+            "apply": "Anwenden"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "ZUGRIFF VERWEIGERT",
+            "desc": "ReaLauncher UI kann nicht über einen Standard-Webbrowser aufgerufen werden. Bitte starte die Anwendung über die offizielle Desktop-Datei.",
+            "code": "UNERLAUBTER_BROWSER_ZUGRIFFSVERSUCH"
+        },
+        "notifications": {
+            "downloading": "Herunterladen",
+            "downloading_mc": "Lade Minecraft herunter",
+            "downloading_modpack": "Lade Modpack herunter",
+            "installing_java": "Installiere Java",
+            "installing_loader": "Installiere Loader",
+            "downloading_assets": "Lade Assets herunter",
+            "verifying": "Verifiziere Dateien",
+            "detecting": "Erkenne Inhalt",
+            "loading_game": "Lade Spiel"
+        },
+        "ready_to_play": "Bereit zum Spielen",
+        "last_played": "Zuletzt gespielt am {date}",
+        "welcome_back": "Willkommen zurück, {name}!",
+        "welcome_description": "Bereit für das nächste Abenteuer? Erstelle eine neue Instanz oder entdecke beliebte Modpacks unten.",
+        "actions": {
+            "jump_in": "LOS GEHT'S"
+        },
+        "loaders": {
+            "vanilla": "Vanilla"
+        },
+        "sections": {
+            "discover_modpack": "Modpack entdecken",
+            "discover_mod": "Mods entdecken"
+        },
+        "console": {
+            "logs_count": "Logs",
+            "filtered_from": "(gefiltert aus {count})",
+            "export": "Exportieren",
+            "clear": "Leeren",
+            "search_placeholder": "Logs durchsuchen...",
+            "auto_scroll_on": "Auto-Scroll: AN",
+            "auto_scroll_off": "Auto-Scroll: AUS",
+            "no_logs": "Noch keine Logs"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "Modpacks",
+            "mod": "Mods",
+            "resourcepack": "Ressourcenpakete",
+            "datapack": "Datenpakete",
+            "shader": "Shader"
+        },
+        "sort": {
+            "relevance": "Relevanz",
+            "downloads": "Downloads",
+            "follows": "Abonnenten",
+            "newest": "Neueste",
+            "updated": "Aktualisiert"
+        },
+        "search_placeholder": "Inhalt suchen..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "Inhalt",
+            "worlds": "Welten",
+            "logs": "Logs",
+            "install": "Inhalt installieren"
+        },
+        "content_types": {
+            "mods": "Mods",
+            "resourcepacks": "Ressourcenpakete",
+            "shaders": "Shader",
+            "datapacks": "Datenpakete"
+        },
+        "actions": {
+            "back": "Zurück zu Instanzen",
+            "settings": "Einstellungen",
+            "open_folder": "Ordner öffnen",
+            "launching": "Starte...",
+            "play": "Spielen",
+            "change_icon": "Ändern"
+        },
+        "filters": {
+            "title": "Filter",
+            "all": "Alle",
+            "enabled": "Aktiviert",
+            "disabled": "Deaktiviert",
+            "no_metadata": "Keine Metadaten",
+            "refresh": "Aktualisieren"
+        },
+        "search_placeholder": "Projekte durchsuchen..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "Benutzerdefiniert",
+            "modpack": "Modpack",
+            "launcher": "Import"
+        },
+        "custom": {
+            "icon_select": "Icon auswählen"
+        },
+        "modpack": {
+            "search_placeholder": "Modpacks suchen...",
+            "import_file": "Aus Datei importieren"
+        },
+        "launcher": {
+            "scan": "Scannen",
+            "select_all": "Alle auswählen",
+            "deselect_all": "Auswahl aufheben",
+            "selected_count": "{count} von {total} ausgewählt",
+            "import_selected": "Auswahl importieren"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "Beschreibung",
+            "versions": "Versionen",
+            "gallery": "Galerie"
+        },
+        "info": {
+            "by": "von {authors}",
+            "downloads": "Downloads",
+            "followers": "Abonnenten",
+            "updated": "Aktualisiert {date}",
+            "created": "Erstellt",
+            "license": "Lizenz",
+            "external_links": "Externe Links",
+            "view_on": "Auf {source} ansehen"
+        },
+        "actions": {
+            "back_to_instance": "Zurück zur Instanz",
+            "installed": "Installiert",
+            "install": "Installieren"
+        },
+        "versions": {
+            "game_version": "Spielversion",
+            "all_versions": "Alle Versionen",
+            "channels": "Kanäle",
+            "table": {
+                "name": "Name",
+                "version": "Spielversion",
+                "platforms": "Plattformen",
+                "published": "Veröffentlicht",
+                "downloads": "Downloads",
+                "actions": "Aktionen"
+            },
+            "no_versions": "Keine Versionen gefunden"
+        },
+        "gallery": {
+            "no_images": "Keine Bilder verfügbar"
+        }
+    }
+}

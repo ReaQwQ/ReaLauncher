@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Mojangles';
+  src: url('./Mojangles.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Custom base styles */
+@layer base {
+  :root {
+    /* Default Font */
+    --font-sans: 'Inter', 'Noto Sans JP', system-ui, sans-serif;
+
+    /* Default Theme (Violet) */
+    --color-primary-50: 245 243 255;
+    --color-primary-100: 237 233 254;
+    --color-primary-200: 221 214 254;
+    --color-primary-300: 196 181 253;
+    --color-primary-400: 167 139 250;
+    --color-primary-500: 139 92 246;
+    --color-primary-600: 124 58 237;
+    --color-primary-700: 109 40 217;
+    --color-primary-800: 91 33 182;
+    --color-primary-900: 76 29 149;
+    --color-primary-950: 46 16 101;
+
+    /* Default Dark Mode (Slate) */
+    --color-dark-50: 248 250 252;
+    --color-dark-100: 241 245 249;
+    --color-dark-200: 226 232 240;
+    --color-dark-300: 203 213 225;
+    --color-dark-400: 148 163 184;
+    --color-dark-500: 100 116 139;
+    --color-dark-600: 71 85 105;
+    --color-dark-700: 51 65 85;
+    --color-dark-800: 30 41 59;
+    --color-dark-900: 15 23 42;
+    --color-dark-950: 2 6 23;
+  }
+
+  /* Light Mode (Inverted Slate) */
+  [data-mode='light'] {
+    --color-dark-50: 15 23 42;
+    --color-dark-100: 30 41 59;
+    --color-dark-200: 51 65 85;
+    --color-dark-300: 71 85 105;
+    --color-dark-400: 100 116 139;
+    --color-dark-500: 148 163 184;
+    --color-dark-600: 203 213 225;
+    --color-dark-700: 226 232 240;
+    --color-dark-800: 241 245 249;
+    --color-dark-900: 255 255 255;
+    --color-dark-950: 255 255 255;
+  }
+
+  /* OLED Mode (Pure Black) */
+  [data-mode='oled'] {
+    --color-dark-50: 248 250 252;
+    --color-dark-100: 241 245 249;
+    --color-dark-200: 226 232 240;
+    --color-dark-300: 203 213 225;
+    --color-dark-400: 148 163 184;
+    --color-dark-500: 100 116 139;
+    --color-dark-600: 71 85 105;
+    --color-dark-700: 20 20 20;
+    --color-dark-800: 10 10 10;
+    --color-dark-900: 0 0 0;
+    --color-dark-950: 0 0 0;
+  }
+
+  /* Themes */
+  [data-theme='emerald'] {
+    --color-primary-50: 236 253 245;
+    --color-primary-100: 209 250 229;
+    --color-primary-200: 167 243 208;
+    --color-primary-300: 110 231 183;
+    --color-primary-400: 52 211 153;
+    --color-primary-500: 16 185 129;
+    --color-primary-600: 5 150 105;
+    --color-primary-700: 4 120 87;
+    --color-primary-800: 6 95 70;
+    --color-primary-900: 6 78 59;
+    --color-primary-950: 2 44 34;
+  }
+
+  [data-theme='rose'] {
+    --color-primary-50: 255 241 242;
+    --color-primary-100: 255 228 230;
+    --color-primary-200: 254 205 211;
+    --color-primary-300: 253 164 175;
+    --color-primary-400: 251 113 133;
+    --color-primary-500: 244 63 94;
+    --color-primary-600: 225 29 72;
+    --color-primary-700: 190 18 60;
+    --color-primary-800: 159 18 57;
+    --color-primary-900: 136 19 55;
+    --color-primary-950: 76 5 25;
+  }
+
+  [data-theme='amber'] {
+    --color-primary-50: 255 251 235;
+    --color-primary-100: 254 243 199;
+    --color-primary-200: 253 230 138;
+    --color-primary-300: 252 211 77;
+    --color-primary-400: 251 191 36;
+    --color-primary-500: 245 158 11;
+    --color-primary-600: 217 119 6;
+    --color-primary-700: 180 83 9;
+    --color-primary-800: 146 64 14;
+    --color-primary-900: 120 53 15;
+    --color-primary-950: 69 26 3;
+  }
+
+  [data-theme='blue'] {
+    --color-primary-50: 239 246 255;
+    --color-primary-100: 219 234 254;
+    --color-primary-200: 191 219 254;
+    --color-primary-300: 147 197 253;
+    --color-primary-400: 96 165 250;
+    --color-primary-500: 59 130 246;
+    --color-primary-600: 37 99 235;
+    --color-primary-700: 29 78 216;
+    --color-primary-800: 30 64 175;
+    --color-primary-900: 30 58 138;
+    --color-primary-950: 23 37 84;
+  }
+
+  [data-theme='orange'] {
+    --color-primary-50: 255 247 237;
+    --color-primary-100: 255 237 213;
+    --color-primary-200: 254 215 170;
+    --color-primary-300: 253 186 116;
+    --color-primary-400: 251 146 60;
+    --color-primary-500: 249 115 22;
+    --color-primary-600: 234 88 12;
+    --color-primary-700: 194 65 12;
+    --color-primary-800: 154 52 18;
+    --color-primary-900: 124 45 18;
+    --color-primary-950: 67 20 7;
+  }
+
+  /* Fonts */
+  [data-font='minecraft'] {
+    --font-sans: 'Mojangles', sans-serif;
+  }
+
+  [data-font='system'] {
+    --font-sans: system-ui, sans-serif;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-transparent text-dark-100;
+    overflow: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-dark-600;
+  }
+}
+
+@layer components {
+
+  /* Glass effect card */
+  .glass-card {
+    @apply bg-dark-900/60 backdrop-blur-xl border border-dark-700/50 rounded-xl;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent;
+  }
+
+  /* Glow button */
+  .btn-glow {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .btn-glow::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-500 opacity-0 transition-opacity duration-300;
+  }
+
+  .btn-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Sidebar active state */
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-dark-400 transition-all duration-200 cursor-pointer w-full relative;
+  }
+
+  .sidebar-item:hover {
+    @apply bg-dark-800/40 text-dark-200;
+  }
+
+  .sidebar-item.active {
+    @apply text-primary-400;
+  }
+
+  /* Minecraft font utility */
+  .font-minecraft {
+    font-family: 'Mojangles', sans-serif;
+  }
+}
+
+@layer utilities {
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Drag region for custom titlebar */
+  .drag-region {
+    -webkit-app-region: drag;
+  }
+
+  .no-drag {
+    -webkit-app-region: no-drag;
+  }
+}

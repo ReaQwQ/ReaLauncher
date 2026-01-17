@@ -1,0 +1,315 @@
+{
+    "common": {
+        "cancel": "キャンセル",
+        "create": "作成",
+        "delete": "削除",
+        "save": "保存",
+        "none": "なし",
+        "loading": "読み込み中...",
+        "fetching": "取得中...",
+        "select": "選択",
+        "back": "戻る",
+        "view_all": "すべて表示",
+        "no_results": "結果が見つかりません",
+        "not_found": "コンテンツが見つかりませんでした"
+    },
+    "sidebar": {
+        "home": "ホーム",
+        "instances": "インスタンス",
+        "settings": "設定",
+        "console": "コンソール"
+    },
+    "instances": {
+        "title": "インスタンス",
+        "create_new": "新しいインスタンス",
+        "no_instances": "インスタンスが見つかりません",
+        "count_label": "個のインスタンスが登録されています",
+        "modal": {
+            "title": "新しいインスタンス",
+            "name_label": "インスタンス名 *",
+            "name_placeholder": "マイインスタンス",
+            "desc_label": "説明 (オプション)",
+            "desc_placeholder": "インスタンスの説明...",
+            "loader_label": "Modローダー",
+            "loader_version_label": "ローダーバージョン",
+            "mc_version_label": "Minecraftバージョン",
+            "filter_label": "フィルター",
+            "search_placeholder": "バージョンを検索...",
+            "no_matching_versions": "一致するバージョンが見つかりません",
+            "tab_vanilla": "バニラ / Mod",
+            "tab_modpack": "Modパック"
+        },
+        "card": {
+            "last_played": "最終プレイ",
+            "mods_count": "Mod数",
+            "play": "プレイ",
+            "add_mod": "Modを追加",
+            "edit_mods": "Modを編集"
+        }
+    },
+    "settings": {
+        "title": "設定",
+        "description": "アプリケーション設定の管理",
+        "categories": {
+            "account": "アカウント",
+            "minecraft": "Minecraft",
+            "general": "全般",
+            "appearance": "外観",
+            "about": "情報"
+        },
+        "account": {
+            "title": "アカウント管理",
+            "subtitle": "現在ログイン中のMicrosoftアカウント",
+            "not_logged_in": "ログインしていません",
+            "login_btn": "Microsoftでサインイン",
+            "logout_btn": "サインアウト",
+            "header_title": "アカウント管理",
+            "header_desc": "ログイン中のアカウント情報を管理します。",
+            "active": "有効",
+            "xbox_account": "Xbox Live アカウント",
+            "other_accounts": "その他のアカウント",
+            "switch": "切り替え",
+            "add_account": "アカウントを追加"
+        },
+        "minecraft": {
+            "title": "Minecraft設定",
+            "java_path": "Javaパス",
+            "java_desc": "Javaの実行ファイルへのパス",
+            "auto_detect": "自動検出",
+            "browse": "参照",
+            "memory_title": "メモリ割り当て",
+            "memory_min": "最小メモリ",
+            "memory_max": "最大メモリ",
+            "java_versions_found": "{count} 個のJavaバージョンが見つかりました",
+            "runtime_title": "ランタイム環境",
+            "runtime_desc": "Minecraftのランタイムとメモリ設定を管理します。",
+            "java_installations": "Javaのインストール",
+            "ram_allocation": "RAM割り当て",
+            "min_ram": "最小 (Xms)",
+            "max_ram": "最大 (Xmx)",
+            "install": "インストール",
+            "detect": "検出",
+            "lts": "LTS",
+            "latest": "最新",
+            "legacy": "旧版",
+            "not_set": "未設定",
+            "test_btn": "テスト",
+            "test_title": "インストールのテスト",
+            "valid": "有効",
+            "failed": "失敗"
+        },
+        "general": {
+            "title": "全般設定",
+            "language": "言語",
+            "language_desc": "インターフェースの言語を選択",
+            "launcher_behavior": "ランチャーの動作",
+            "close_on_launch": "ゲーム起動時にランチャーを閉じる",
+            "launcher_preferences": "ランチャー設定",
+            "advanced_title": "高度なアプリ設定",
+            "root_dir": "ルートディレクトリ",
+            "root_dir_desc": "ランチャーがすべてのファイルを保存するディレクトリです。変更は再起動後に適用されます。",
+            "change": "変更",
+            "app_cache": "アプリキャッシュ",
+            "app_cache_desc": "ランチャーは読み込みを高速化するためにデータをキャッシュします。強制的に再読み込みするにはキャッシュを削除してください。",
+            "purge_cache": "キャッシュを削除",
+            "max_downloads": "最大同時ダウンロード数",
+            "max_downloads_desc": "一度にダウンロードする最大ファイル数。インターネット接続が遅い場合は下げてください。",
+            "max_writes": "最大同時書き込み数",
+            "max_writes_desc": "一度にディスクに書き込む最大ファイル数。I/Oエラーが発生する場合は下げてください。"
+        },
+        "about": {
+            "title": "ReaLauncherについて",
+            "version": "バージョン",
+            "author": "作成者",
+            "links": "リンク",
+            "github": "GitHubリポジトリ",
+            "discord": "Discordサーバー",
+            "tagline": "次世代Minecraftランチャー",
+            "build_info": "v0.2.0-BETA • プレミアムビルド",
+            "source_code": "ソースコード",
+            "community": "コミュニティ",
+            "copyright": "© 2026 ReaLauncher Project. Distributed under MIT License. Minecraft is a trademark of Mojang AB.",
+            "check_update": "アップデートを確認"
+        },
+        "browser": {
+            "title": "ファイルブラウザ",
+            "select_file": "ファイルを選択",
+            "select_folder": "フォルダを選択",
+            "quick_access": "クイックアクセス",
+            "home": "ホーム",
+            "drives": "ドライブ",
+            "empty": "このフォルダは空です"
+        },
+        "appearance": {
+            "title": "外観",
+            "description": "ランチャーの見た目をカスタマイズします。",
+            "fontFamily": "フォント",
+            "colorTheme": "テーマカラー",
+            "fonts": {
+                "inter": "Inter (デフォルト)",
+                "minecraft": "Minecraft",
+                "system": "システムUI"
+            },
+            "colors": {
+                "violet": "バイオレット",
+                "emerald": "エメラルド",
+                "rose": "ローズ",
+                "amber": "アンバー",
+                "blue": "ブルー",
+                "orange": "オレンジ"
+            },
+            "active": "適用中",
+            "apply": "適用"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "アクセス拒否",
+            "desc": "ReaLauncher UIは標準のWebブラウザからはアクセスできません。公式のデスクトップ実行可能ファイルを使用してアプリケーションを起動してください。",
+            "code": "不正なブラウザアクセス試行"
+        },
+        "notifications": {
+            "downloading": "ダウンロード中",
+            "downloading_mc": "Minecraftをダウンロード中",
+            "downloading_modpack": "Modパックをダウンロード中",
+            "installing_java": "Javaをインストール中",
+            "installing_loader": "ローダーをインストール中",
+            "downloading_assets": "アセットをダウンロード中",
+            "verifying": "ファイルを検証中",
+            "detecting": "コンテンツを検出中",
+            "loading_game": "ゲームを読み込み中"
+        },
+        "ready_to_play": "プレイ可能",
+        "last_played": "最終プレイ: {date}",
+        "welcome_back": "おかえりなさい{name}！",
+        "welcome_description": "次の冒険を始めましょう！新しいインスタンスを作成するか、人気のModパックを探してみましょう。",
+        "actions": {
+            "jump_in": "今すぐプレイ"
+        },
+        "loaders": {
+            "vanilla": "バニラ"
+        },
+        "sections": {
+            "discover_modpack": "Modパックを探す",
+            "discover_mod": "Modを探す"
+        },
+        "console": {
+            "logs_count": "件のログ",
+            "filtered_from": "({count} 件からフィルタリング)",
+            "export": "エクスポート",
+            "clear": "クリア",
+            "search_placeholder": "ログを検索...",
+            "auto_scroll_on": "自動スクロール: オン",
+            "auto_scroll_off": "自動スクロール: オフ",
+            "no_logs": "ログがありません"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "Modパック",
+            "mod": "Mod",
+            "resourcepack": "リソースパック",
+            "datapack": "データパック",
+            "shader": "シェーダー"
+        },
+        "sort": {
+            "relevance": "関連度順",
+            "downloads": "ダウンロード数順",
+            "follows": "フォロワー数順",
+            "newest": "新着順",
+            "updated": "更新順"
+        },
+        "search_placeholder": "コンテンツを検索..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "コンテンツ",
+            "worlds": "ワールド",
+            "logs": "ログ",
+            "install": "コンテンツのインストール"
+        },
+        "content_types": {
+            "mods": "Mod",
+            "resourcepacks": "リソースパック",
+            "shaders": "シェーダー",
+            "datapacks": "データパック"
+        },
+        "actions": {
+            "back": "インスタンス一覧に戻る",
+            "settings": "設定",
+            "open_folder": "フォルダを開く",
+            "launching": "起動中...",
+            "play": "プレイ",
+            "change_icon": "変更"
+        },
+        "filters": {
+            "title": "フィルター",
+            "all": "すべて",
+            "enabled": "有効",
+            "disabled": "無効",
+            "no_metadata": "メタデータなし",
+            "refresh": "更新"
+        },
+        "search_placeholder": "プロジェクトを検索..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "カスタム",
+            "modpack": "モッドパック",
+            "launcher": "インポート"
+        },
+        "custom": {
+            "icon_select": "アイコンを選択"
+        },
+        "modpack": {
+            "search_placeholder": "モッドパックを検索...",
+            "import_file": "ファイルからインポート"
+        },
+        "launcher": {
+            "scan": "スキャン",
+            "select_all": "すべて選択",
+            "deselect_all": "選択解除",
+            "selected_count": "{count} / {total} 件選択中",
+            "import_selected": "選択項目をインポート"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "説明",
+            "versions": "バージョン",
+            "gallery": "ギャラリー"
+        },
+        "info": {
+            "by": "作成者: {authors}",
+            "downloads": "ダウンロード",
+            "followers": "フォロワー",
+            "updated": "更新日: {date}",
+            "created": "作成日",
+            "license": "ライセンス",
+            "external_links": "外部リンク",
+            "view_on": "{source} で表示"
+        },
+        "actions": {
+            "back_to_instance": "インスタンスに戻る",
+            "installed": "インストール済み",
+            "install": "インストール"
+        },
+        "versions": {
+            "game_version": "ゲームバージョン",
+            "all_versions": "すべてのバージョン",
+            "channels": "チャンネル",
+            "table": {
+                "name": "名前",
+                "version": "ゲームバージョン",
+                "platforms": "プラットフォーム",
+                "published": "公開日",
+                "downloads": "ダウンロード",
+                "actions": "操作"
+            },
+            "no_versions": "バージョンが見つかりませんでした"
+        },
+        "gallery": {
+            "no_images": "画像がありません"
+        }
+    }
+}

@@ -1,0 +1,314 @@
+{
+    "common": {
+        "cancel": "取消",
+        "create": "创建",
+        "delete": "删除",
+        "save": "保存",
+        "none": "无",
+        "loading": "加载中...",
+        "fetching": "获取中...",
+        "select": "选择",
+        "back": "返回",
+        "view_all": "查看全部",
+        "no_results": "未找到结果",
+        "not_found": "未找到内容"
+    },
+    "sidebar": {
+        "home": "首页",
+        "instances": "实例",
+        "settings": "设置",
+        "console": "控制台"
+    },
+    "instances": {
+        "title": "实例",
+        "create_new": "新实例",
+        "no_instances": "未找到实例",
+        "count_label": "个实例已注册",
+        "modal": {
+            "title": "新实例",
+            "name_label": "实例名称 *",
+            "name_placeholder": "我的实例",
+            "desc_label": "描述 (可选)",
+            "desc_placeholder": "实例描述...",
+            "loader_label": "模组加载器",
+            "loader_version_label": "加载器版本",
+            "mc_version_label": "Minecraft 版本",
+            "filter_label": "筛选",
+            "search_placeholder": "搜索版本...",
+            "no_matching_versions": "未找到匹配版本",
+            "tab_vanilla": "原版 / 模组",
+            "tab_modpack": "模组包"
+        },
+        "card": {
+            "last_played": "上次游玩",
+            "mods_count": "模组",
+            "play": "启动",
+            "add_mod": "添加模组",
+            "edit_mods": "编辑模组"
+        }
+    },
+    "settings": {
+        "title": "设置",
+        "description": "管理应用程序设置",
+        "categories": {
+            "account": "账户",
+            "minecraft": "Minecraft",
+            "general": "常规",
+            "appearance": "外观",
+            "about": "关于"
+        },
+        "account": {
+            "title": "账户管理",
+            "subtitle": "当前登录的 Microsoft 账户",
+            "not_logged_in": "未登录",
+            "login_btn": "使用 Microsoft 登录",
+            "logout_btn": "注销",
+            "header_title": "账户管理",
+            "header_desc": "管理已登录的账户信息。",
+            "active": "活跃",
+            "xbox_account": "Xbox Live 账户",
+            "other_accounts": "其他账户",
+            "switch": "切换",
+            "add_account": "添加账户"
+        },
+        "minecraft": {
+            "title": "Minecraft 设置",
+            "java_path": "Java 路径",
+            "java_desc": "Java 可执行文件路径",
+            "auto_detect": "自动检测",
+            "browse": "浏览",
+            "memory_title": "内存分配",
+            "memory_min": "最小内存",
+            "memory_max": "最大内存",
+            "java_versions_found": "找到 {count} 个 Java 版本",
+            "runtime_title": "运行环境",
+            "runtime_desc": "管理 Minecraft 运行时和内存设置。",
+            "java_installations": "Java 安装",
+            "ram_allocation": "RAM 分配",
+            "min_ram": "最小 (Xms)",
+            "max_ram": "最大 (Xmx)",
+            "install": "安装",
+            "detect": "检测",
+            "lts": "LTS",
+            "latest": "最新",
+            "legacy": "旧版",
+            "not_set": "未设置",
+            "test_btn": "测试",
+            "test_title": "测试安装",
+            "valid": "有效",
+            "failed": "失败"
+        },
+        "general": {
+            "title": "常规设置",
+            "language": "语言",
+            "language_desc": "选择界面语言",
+            "launcher_behavior": "启动器行为",
+            "close_on_launch": "游戏启动时关闭启动器",
+            "launcher_preferences": "启动器偏好",
+            "advanced_title": "高级设置",
+            "root_dir": "根目录",
+            "root_dir_desc": "启动器存储所有文件的目录。更改将在重启后生效。",
+            "change": "更改",
+            "app_cache": "应用缓存",
+            "app_cache_desc": "启动器缓存数据以加快加载。清除以强制重新加载。",
+            "purge_cache": "清除缓存",
+            "max_downloads": "最大并发下载数",
+            "max_downloads_desc": "同时下载的最大文件数。网络较差时降低。",
+            "max_writes": "最大并发写入数",
+            "max_writes_desc": "同时写入磁盘的最大文件数。出现 I/O 错误时降低。"
+        },
+        "about": {
+            "title": "关于 ReaLauncher",
+            "version": "版本",
+            "author": "作者",
+            "links": "链接",
+            "github": "GitHub 仓库",
+            "discord": "Discord 服务器",
+            "tagline": "下一代 Minecraft 启动器",
+            "build_info": "v0.2.0-BETA • 高级构建",
+            "source_code": "源代码",
+            "community": "社区",
+            "copyright": "© 2026 ReaLauncher 项目。基于 MIT 许可证分发。Minecraft 是 Mojang AB 的商标。"
+        },
+        "browser": {
+            "title": "文件浏览器",
+            "select_file": "选择文件",
+            "select_folder": "选择文件夹",
+            "quick_access": "快速访问",
+            "home": "主页",
+            "drives": "驱动器",
+            "empty": "此文件夹为空"
+        },
+        "appearance": {
+            "title": "外观",
+            "description": "自定义启动器的外观。",
+            "fontFamily": "字体系列",
+            "colorTheme": "颜色主题",
+            "fonts": {
+                "inter": "Inter (默认)",
+                "minecraft": "Minecraft",
+                "system": "系统界面"
+            },
+            "colors": {
+                "violet": "紫罗兰",
+                "emerald": "祖母绿",
+                "rose": "玫瑰红",
+                "amber": "琥珀色",
+                "blue": "蓝色",
+                "orange": "橙色"
+            },
+            "active": "当前使用",
+            "apply": "应用"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "访问被拒绝",
+            "desc": "无法通过标准网页浏览器访问 ReaLauncher 界面。请使用官方桌面可执行文件启动应用程序。",
+            "code": "未授权的浏览器访问尝试"
+        },
+        "notifications": {
+            "downloading": "下载中",
+            "downloading_mc": "下载 Minecraft",
+            "downloading_modpack": "下载模组包",
+            "installing_java": "安装 Java",
+            "installing_loader": "安装加载器",
+            "downloading_assets": "下载资源",
+            "verifying": "验证文件",
+            "detecting": "检测内容",
+            "loading_game": "加载游戏"
+        },
+        "ready_to_play": "准备就绪",
+        "last_played": "上次游玩 {date}",
+        "welcome_back": "欢迎回来，{name}！",
+        "welcome_description": "准备好开始下一次冒险了吗？创建新实例或在下方发现流行模组包。",
+        "actions": {
+            "jump_in": "开始游戏"
+        },
+        "loaders": {
+            "vanilla": "原版"
+        },
+        "sections": {
+            "discover_modpack": "发现模组包",
+            "discover_mod": "发现模组"
+        },
+        "console": {
+            "logs_count": "日志",
+            "filtered_from": "(从 {count} 条中筛选)",
+            "export": "导出",
+            "clear": "清除",
+            "search_placeholder": "搜索日志...",
+            "auto_scroll_on": "自动滚动: 开",
+            "auto_scroll_off": "自动滚动: 关",
+            "no_logs": "暂无日志"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "模组包",
+            "mod": "模组",
+            "resourcepack": "资源包",
+            "datapack": "数据包",
+            "shader": "光影"
+        },
+        "sort": {
+            "relevance": "相关度",
+            "downloads": "下载量",
+            "follows": "关注数",
+            "newest": "最新",
+            "updated": "最近更新"
+        },
+        "search_placeholder": "搜索内容..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "内容",
+            "worlds": "存档",
+            "logs": "日志",
+            "install": "安装内容"
+        },
+        "content_types": {
+            "mods": "模组",
+            "resourcepacks": "资源包",
+            "shaders": "光影",
+            "datapacks": "数据包"
+        },
+        "actions": {
+            "back": "返回实例",
+            "settings": "设置",
+            "open_folder": "打开文件夹",
+            "launching": "正在启动...",
+            "play": "启动",
+            "change_icon": "更改"
+        },
+        "filters": {
+            "title": "筛选",
+            "all": "全部",
+            "enabled": "已启用",
+            "disabled": "已禁用",
+            "no_metadata": "无元数据",
+            "refresh": "刷新"
+        },
+        "search_placeholder": "搜索项目..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "自定义",
+            "modpack": "模组包",
+            "launcher": "导入"
+        },
+        "custom": {
+            "icon_select": "选择图标"
+        },
+        "modpack": {
+            "search_placeholder": "搜索模组包...",
+            "import_file": "从文件导入"
+        },
+        "launcher": {
+            "scan": "扫描",
+            "select_all": "全选",
+            "deselect_all": "取消全选",
+            "selected_count": "已选 {count} / {total}",
+            "import_selected": "导入选中项"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "描述",
+            "versions": "版本",
+            "gallery": "画廊"
+        },
+        "info": {
+            "by": "作者 {authors}",
+            "downloads": "下载",
+            "followers": "关注者",
+            "updated": "更新于 {date}",
+            "created": "创建于",
+            "license": "许可证",
+            "external_links": "外部链接",
+            "view_on": "在 {source} 上查看"
+        },
+        "actions": {
+            "back_to_instance": "返回实例",
+            "installed": "已安装",
+            "install": "安装"
+        },
+        "versions": {
+            "game_version": "游戏版本",
+            "all_versions": "所有版本",
+            "channels": "通道",
+            "table": {
+                "name": "名称",
+                "version": "游戏版本",
+                "platforms": "平台",
+                "published": "发布时间",
+                "downloads": "下载量",
+                "actions": "操作"
+            },
+            "no_versions": "未找到版本"
+        },
+        "gallery": {
+            "no_images": "暂无图片"
+        }
+    }
+}

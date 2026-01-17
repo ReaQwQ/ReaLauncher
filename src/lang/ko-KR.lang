@@ -1,0 +1,314 @@
+{
+    "common": {
+        "cancel": "취소",
+        "create": "만들기",
+        "delete": "삭제",
+        "save": "저장",
+        "none": "없음",
+        "loading": "로딩 중...",
+        "fetching": "가져오는 중...",
+        "select": "선택",
+        "back": "뒤로",
+        "view_all": "모두 보기",
+        "no_results": "결과 없음",
+        "not_found": "콘텐츠를 찾을 수 없음"
+    },
+    "sidebar": {
+        "home": "홈",
+        "instances": "인스턴스",
+        "settings": "설정",
+        "console": "콘솔"
+    },
+    "instances": {
+        "title": "인스턴스",
+        "create_new": "새 인스턴스",
+        "no_instances": "인스턴스가 없습니다",
+        "count_label": "개의 인스턴스가 등록됨",
+        "modal": {
+            "title": "새 인스턴스",
+            "name_label": "인스턴스 이름 *",
+            "name_placeholder": "내 인스턴스",
+            "desc_label": "설명 (선택)",
+            "desc_placeholder": "인스턴스 설명...",
+            "loader_label": "모드 로더",
+            "loader_version_label": "로더 버전",
+            "mc_version_label": "Minecraft 버전",
+            "filter_label": "필터",
+            "search_placeholder": "버전 검색...",
+            "no_matching_versions": "일치하는 버전 없음",
+            "tab_vanilla": "바닐라 / 모드",
+            "tab_modpack": "모드팩"
+        },
+        "card": {
+            "last_played": "최근 플레이",
+            "mods_count": "모드",
+            "play": "플레이",
+            "add_mod": "모드 추가",
+            "edit_mods": "모드 편집"
+        }
+    },
+    "settings": {
+        "title": "설정",
+        "description": "애플리케이션 설정 관리",
+        "categories": {
+            "account": "계정",
+            "minecraft": "Minecraft",
+            "general": "일반",
+            "appearance": "모양",
+            "about": "정보"
+        },
+        "account": {
+            "title": "계정 관리",
+            "subtitle": "현재 로그인된 Microsoft 계정",
+            "not_logged_in": "로그인되지 않음",
+            "login_btn": "Microsoft로 로그인",
+            "logout_btn": "로그아웃",
+            "header_title": "계정 관리",
+            "header_desc": "로그인된 계정 정보를 관리합니다.",
+            "active": "활성",
+            "xbox_account": "Xbox Live 계정",
+            "other_accounts": "다른 계정",
+            "switch": "전환",
+            "add_account": "다른 계정 추가"
+        },
+        "minecraft": {
+            "title": "Minecraft 설정",
+            "java_path": "Java 경로",
+            "java_desc": "Java 실행 파일 경로",
+            "auto_detect": "자동 감지",
+            "browse": "찾아보기",
+            "memory_title": "메모리 할당",
+            "memory_min": "최소 메모리",
+            "memory_max": "최대 메모리",
+            "java_versions_found": "{count}개의 Java 버전 발견됨",
+            "runtime_title": "런타임 환경",
+            "runtime_desc": "Minecraft 런타임 및 메모리 설정을 관리합니다.",
+            "java_installations": "Java 설치",
+            "ram_allocation": "RAM 할당",
+            "min_ram": "최소 (Xms)",
+            "max_ram": "최대 (Xmx)",
+            "install": "설치",
+            "detect": "감지",
+            "lts": "LTS",
+            "latest": "최신",
+            "legacy": "레거시",
+            "not_set": "설정되지 않음",
+            "test_btn": "테스트",
+            "test_title": "설치 테스트",
+            "valid": "유효함",
+            "failed": "실패"
+        },
+        "general": {
+            "title": "일반 설정",
+            "language": "언어",
+            "language_desc": "인터페이스 언어 선택",
+            "launcher_behavior": "런처 동작",
+            "close_on_launch": "게임 시작 시 런처 닫기",
+            "launcher_preferences": "런처 기본 설정",
+            "advanced_title": "고급 앱 설정",
+            "root_dir": "루트 디렉토리",
+            "root_dir_desc": "런처가 모든 파일을 저장하는 디렉토리입니다. 변경 사항은 재시작 후 적용됩니다.",
+            "change": "변경",
+            "app_cache": "앱 캐시",
+            "app_cache_desc": "런처는 로딩 속도를 높이기 위해 데이터를 캐시합니다. 강제 새로 고침하려면 지우세요.",
+            "purge_cache": "캐시 지우기",
+            "max_downloads": "최대 동시 다운로드",
+            "max_downloads_desc": "한 번에 다운로드할 최대 파일 수. 인터넷이 느리면 줄이세요.",
+            "max_writes": "최대 동시 쓰기",
+            "max_writes_desc": "한 번에 디스크에 쓸 최대 파일 수. I/O 오류 발생 시 줄이세요."
+        },
+        "about": {
+            "title": "ReaLauncher 정보",
+            "version": "버전",
+            "author": "작성자",
+            "links": "링크",
+            "github": "GitHub 저장소",
+            "discord": "Discord 서버",
+            "tagline": "차세대 Minecraft 런처",
+            "build_info": "v0.2.0-BETA • 프리미엄 빌드",
+            "source_code": "소스 코드",
+            "community": "커뮤니티",
+            "copyright": "© 2026 ReaLauncher Project. MIT 라이선스로 배포됨. Minecraft는 Mojang AB의 상표입니다."
+        },
+        "browser": {
+            "title": "파일 브라우저",
+            "select_file": "파일 선택",
+            "select_folder": "폴더 선택",
+            "quick_access": "빠른 액세스",
+            "home": "홈",
+            "drives": "드라이브",
+            "empty": "이 폴더는 비어 있습니다"
+        },
+        "appearance": {
+            "title": "외관",
+            "description": "런처의 모양과 느낌을 사용자 정의합니다.",
+            "fontFamily": "글꼴 패밀리",
+            "colorTheme": "색상 테마",
+            "fonts": {
+                "inter": "Inter (기본값)",
+                "minecraft": "Minecraft",
+                "system": "시스템 UI"
+            },
+            "colors": {
+                "violet": "바이올렛",
+                "emerald": "에메랄드",
+                "rose": "로즈",
+                "amber": "앰버",
+                "blue": "블루",
+                "orange": "오렌지"
+            },
+            "active": "활성",
+            "apply": "적용"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "액세스 거부됨",
+            "desc": "ReaLauncher UI는 표준 웹 브라우저를 통해 액세스할 수 없습니다. 공식 데스크톱 실행 파일을 사용하여 애플리케이션을 실행하십시오.",
+            "code": "무단 브라우저 액세스 시도"
+        },
+        "notifications": {
+            "downloading": "다운로드 중",
+            "downloading_mc": "Minecraft 다운로드 중",
+            "downloading_modpack": "모드팩 다운로드 중",
+            "installing_java": "Java 설치 중",
+            "installing_loader": "로더 설치 중",
+            "downloading_assets": "자산 다운로드 중",
+            "verifying": "파일 확인 중",
+            "detecting": "콘텐츠 감지 중",
+            "loading_game": "게임 로딩 중"
+        },
+        "ready_to_play": "플레이 준비 완료",
+        "last_played": "최근 플레이: {date}",
+        "welcome_back": "{name}님, 환영합니다!",
+        "welcome_description": "다음 모험을 시작할 준비가 되셨나요? 새 인스턴스를 만들거나 아래에서 인기 모드팩을 찾아보세요.",
+        "actions": {
+            "jump_in": "시작하기"
+        },
+        "loaders": {
+            "vanilla": "바닐라"
+        },
+        "sections": {
+            "discover_modpack": "모드팩 찾기",
+            "discover_mod": "모드 찾기"
+        },
+        "console": {
+            "logs_count": "로그",
+            "filtered_from": "({count}개 중 필터링됨)",
+            "export": "내보내기",
+            "clear": "지우기",
+            "search_placeholder": "로그 검색...",
+            "auto_scroll_on": "자동 스크롤: 켜짐",
+            "auto_scroll_off": "자동 스크롤: 꺼짐",
+            "no_logs": "로그 없음"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "모드팩",
+            "mod": "모드",
+            "resourcepack": "리소스 팩",
+            "datapack": "데이터 팩",
+            "shader": "셰이더"
+        },
+        "sort": {
+            "relevance": "관련성",
+            "downloads": "다운로드",
+            "follows": "팔로워",
+            "newest": "최신",
+            "updated": "업데이트됨"
+        },
+        "search_placeholder": "콘텐츠 검색..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "콘텐츠",
+            "worlds": "월드",
+            "logs": "로그",
+            "install": "콘텐츠 설치"
+        },
+        "content_types": {
+            "mods": "모드",
+            "resourcepacks": "리소스 팩",
+            "shaders": "셰이더",
+            "datapacks": "데이터 팩"
+        },
+        "actions": {
+            "back": "인스턴스로 돌아가기",
+            "settings": "설정",
+            "open_folder": "폴더 열기",
+            "launching": "실행 중...",
+            "play": "플레이",
+            "change_icon": "변경"
+        },
+        "filters": {
+            "title": "필터",
+            "all": "모두",
+            "enabled": "활성",
+            "disabled": "비활성",
+            "no_metadata": "메타데이터 없음",
+            "refresh": "새로 고침"
+        },
+        "search_placeholder": "프로젝트 검색..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "사용자 지정",
+            "modpack": "모드팩",
+            "launcher": "가져오기"
+        },
+        "custom": {
+            "icon_select": "아이콘 선택"
+        },
+        "modpack": {
+            "search_placeholder": "모드팩 검색...",
+            "import_file": "파일에서 가져오기"
+        },
+        "launcher": {
+            "scan": "스캔",
+            "select_all": "모두 선택",
+            "deselect_all": "선택 해제",
+            "selected_count": "{total}개 중 {count}개 선택됨",
+            "import_selected": "선택한 항목 가져오기"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "설명",
+            "versions": "버전",
+            "gallery": "갤러리"
+        },
+        "info": {
+            "by": "제작: {authors}",
+            "downloads": "다운로드",
+            "followers": "팔로워",
+            "updated": "업데이트: {date}",
+            "created": "생성됨",
+            "license": "라이선스",
+            "external_links": "외부 링크",
+            "view_on": "{source}에서 보기"
+        },
+        "actions": {
+            "back_to_instance": "인스턴스로 돌아가기",
+            "installed": "설치됨",
+            "install": "설치"
+        },
+        "versions": {
+            "game_version": "게임 버전",
+            "all_versions": "모든 버전",
+            "channels": "채널",
+            "table": {
+                "name": "이름",
+                "version": "게임 버전",
+                "platforms": "플랫폼",
+                "published": "게시됨",
+                "downloads": "다운로드",
+                "actions": "작업"
+            },
+            "no_versions": "버전 찾을 수 없음"
+        },
+        "gallery": {
+            "no_images": "이미지 없음"
+        }
+    }
+}

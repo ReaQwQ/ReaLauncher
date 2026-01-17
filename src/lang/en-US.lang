@@ -1,0 +1,315 @@
+{
+    "common": {
+        "cancel": "Cancel",
+        "create": "Create",
+        "delete": "Delete",
+        "save": "Save",
+        "none": "None",
+        "loading": "Loading...",
+        "fetching": "Fetching...",
+        "select": "Select",
+        "back": "Back",
+        "view_all": "View all",
+        "no_results": "No results found",
+        "not_found": "Content not found"
+    },
+    "sidebar": {
+        "home": "Home",
+        "instances": "Instances",
+        "settings": "Settings",
+        "console": "Console"
+    },
+    "instances": {
+        "title": "Instances",
+        "create_new": "New Instance",
+        "no_instances": "No instances found",
+        "count_label": "instances are registered",
+        "modal": {
+            "title": "New Instance",
+            "name_label": "Instance Name *",
+            "name_placeholder": "My Instance",
+            "desc_label": "Description (Optional)",
+            "desc_placeholder": "Instance description...",
+            "loader_label": "Mod Loader",
+            "loader_version_label": "Loader Version",
+            "mc_version_label": "Minecraft Version",
+            "filter_label": "Filters",
+            "search_placeholder": "Search versions...",
+            "no_matching_versions": "No matching versions found",
+            "tab_vanilla": "Vanilla / Modded",
+            "tab_modpack": "Modpack"
+        },
+        "card": {
+            "last_played": "Last played",
+            "mods_count": "Mods",
+            "play": "Play",
+            "add_mod": "Add Mod",
+            "edit_mods": "Edit Mods"
+        }
+    },
+    "settings": {
+        "title": "Settings",
+        "description": "Manage application settings",
+        "categories": {
+            "account": "Account",
+            "minecraft": "Minecraft",
+            "general": "General",
+            "appearance": "Appearance",
+            "about": "About"
+        },
+        "account": {
+            "title": "Account Management",
+            "subtitle": "Currently logged in Microsoft account",
+            "not_logged_in": "Not logged in",
+            "login_btn": "Sign in with Microsoft",
+            "logout_btn": "Sign out",
+            "header_title": "Account Management",
+            "header_desc": "Manage logged-in account information.",
+            "active": "Active",
+            "xbox_account": "Xbox Live Account",
+            "other_accounts": "Other Accounts",
+            "switch": "Switch",
+            "add_account": "Add Another Account"
+        },
+        "minecraft": {
+            "title": "Minecraft Settings",
+            "java_path": "Java Path",
+            "java_desc": "Path to the Java executable",
+            "auto_detect": "Auto-detect",
+            "browse": "Browse",
+            "memory_title": "Memory Allocation",
+            "memory_min": "Min Memory",
+            "memory_max": "Max Memory",
+            "java_versions_found": "Found {count} Java versions",
+            "runtime_title": "Runtime Environment",
+            "runtime_desc": "Manage Minecraft runtime and memory settings.",
+            "java_installations": "Java Installations",
+            "ram_allocation": "RAM Allocation",
+            "min_ram": "Minimum (Xms)",
+            "max_ram": "Maximum (Xmx)",
+            "install": "Install",
+            "detect": "Detect",
+            "lts": "LTS",
+            "latest": "Latest",
+            "legacy": "Legacy",
+            "not_set": "Not set",
+            "test_btn": "Test",
+            "test_title": "Test Installation",
+            "valid": "Valid",
+            "failed": "Failed"
+        },
+        "general": {
+            "title": "General Settings",
+            "language": "Language",
+            "language_desc": "Choose the interface language",
+            "launcher_behavior": "Launcher Behavior",
+            "close_on_launch": "Close launcher when game starts",
+            "launcher_preferences": "Launcher Preferences",
+            "advanced_title": "Advanced App Settings",
+            "root_dir": "Root Directory",
+            "root_dir_desc": "The directory where the launcher stores all of its files. Changes will be applied after restarting.",
+            "change": "Change",
+            "app_cache": "App Cache",
+            "app_cache_desc": "The launcher stores a cache of data to speed up loading. Purge to force reload.",
+            "purge_cache": "Purge cache",
+            "max_downloads": "Maximum concurrent downloads",
+            "max_downloads_desc": "Max files to download at once. Lower this if internet is poor.",
+            "max_writes": "Maximum concurrent writes",
+            "max_writes_desc": "Max files to write to disk at once. Lower this if getting I/O errors."
+        },
+        "about": {
+            "title": "About ReaLauncher",
+            "version": "Version",
+            "author": "Author",
+            "links": "Links",
+            "github": "GitHub Repository",
+            "discord": "Discord Server",
+            "tagline": "Next-Gen Minecraft Launcher",
+            "build_info": "v0.2.0-BETA • PREMIUM BUILD",
+            "source_code": "Source Code",
+            "community": "Community",
+            "copyright": "© 2026 ReaLauncher Project. Distributed under MIT License. Minecraft is a trademark of Mojang AB.",
+            "check_update": "Check for Updates"
+        },
+        "browser": {
+            "title": "File Browser",
+            "select_file": "Select File",
+            "select_folder": "Select Folder",
+            "quick_access": "Quick Access",
+            "home": "Home",
+            "drives": "Drives",
+            "empty": "This folder is empty"
+        },
+        "appearance": {
+            "title": "Appearance",
+            "description": "Customize the look and feel of the launcher.",
+            "fontFamily": "Font Family",
+            "colorTheme": "Color Theme",
+            "fonts": {
+                "inter": "Inter (Default)",
+                "minecraft": "Minecraft",
+                "system": "System UI"
+            },
+            "colors": {
+                "violet": "Violet",
+                "emerald": "Emerald",
+                "rose": "Rose",
+                "amber": "Amber",
+                "blue": "Blue",
+                "orange": "Orange"
+            },
+            "active": "Active",
+            "apply": "Apply"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "ACCESS DENIED",
+            "desc": "ReaLauncher UI cannot be accessed via a standard web browser. Please launch the application using the official desktop executable.",
+            "code": "UNAUTHORIZED_BROWSER_ACCESS_ATTEMPT"
+        },
+        "notifications": {
+            "downloading": "Downloading",
+            "downloading_mc": "Downloading Minecraft",
+            "downloading_modpack": "Downloading Modpack",
+            "installing_java": "Installing Java",
+            "installing_loader": "Installing Loader",
+            "downloading_assets": "Downloading Assets",
+            "verifying": "Verifying Files",
+            "detecting": "Detecting Content",
+            "loading_game": "Loading Game"
+        },
+        "ready_to_play": "Ready to play",
+        "last_played": "Last played {date}",
+        "welcome_back": "Welcome back{name}!",
+        "welcome_description": "Ready to start your next adventure? Create a new instance or discover popular modpacks below.",
+        "actions": {
+            "jump_in": "JUMP IN"
+        },
+        "loaders": {
+            "vanilla": "Vanilla"
+        },
+        "sections": {
+            "discover_modpack": "Discover a modpack",
+            "discover_mod": "Discover mods"
+        },
+        "console": {
+            "logs_count": "logs",
+            "filtered_from": "(filtered from {count})",
+            "export": "Export",
+            "clear": "Clear",
+            "search_placeholder": "Search logs...",
+            "auto_scroll_on": "Auto-scroll: ON",
+            "auto_scroll_off": "Auto-scroll: OFF",
+            "no_logs": "No logs yet"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "Modpacks",
+            "mod": "Mods",
+            "resourcepack": "Resource Packs",
+            "datapack": "Data Packs",
+            "shader": "Shaders"
+        },
+        "sort": {
+            "relevance": "Relevance",
+            "downloads": "Downloads",
+            "follows": "Follows",
+            "newest": "Newest",
+            "updated": "Updated"
+        },
+        "search_placeholder": "Search content..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "Content",
+            "worlds": "Worlds",
+            "logs": "Logs",
+            "install": "Install Content"
+        },
+        "content_types": {
+            "mods": "Mods",
+            "resourcepacks": "Resource Packs",
+            "shaders": "Shaders",
+            "datapacks": "Data Packs"
+        },
+        "actions": {
+            "back": "Back to Instances",
+            "settings": "Settings",
+            "open_folder": "Open Folder",
+            "launching": "Launching...",
+            "play": "Play",
+            "change_icon": "Change"
+        },
+        "filters": {
+            "title": "Filter",
+            "all": "All",
+            "enabled": "Enabled",
+            "disabled": "Disabled",
+            "no_metadata": "No Metadata",
+            "refresh": "Refresh"
+        },
+        "search_placeholder": "Search projects..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "Custom",
+            "modpack": "Modpack",
+            "launcher": "Import"
+        },
+        "custom": {
+            "icon_select": "Select Icon"
+        },
+        "modpack": {
+            "search_placeholder": "Search modpacks...",
+            "import_file": "Import from file"
+        },
+        "launcher": {
+            "scan": "Scan",
+            "select_all": "Select All",
+            "deselect_all": "Deselect All",
+            "selected_count": "{count} of {total} selected",
+            "import_selected": "Import Selected"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "Description",
+            "versions": "Versions",
+            "gallery": "Gallery"
+        },
+        "info": {
+            "by": "by {authors}",
+            "downloads": "downloads",
+            "followers": "followers",
+            "updated": "Updated {date}",
+            "created": "Created",
+            "license": "License",
+            "external_links": "External Links",
+            "view_on": "View on {source}"
+        },
+        "actions": {
+            "back_to_instance": "Back to instance",
+            "installed": "Installed",
+            "install": "Install"
+        },
+        "versions": {
+            "game_version": "Game version",
+            "all_versions": "All versions",
+            "channels": "Channels",
+            "table": {
+                "name": "Name",
+                "version": "Game version",
+                "platforms": "Platforms",
+                "published": "Published",
+                "downloads": "Downloads",
+                "actions": "Actions"
+            },
+            "no_versions": "No versions found"
+        },
+        "gallery": {
+            "no_images": "No images available"
+        }
+    }
+}

@@ -1,0 +1,314 @@
+{
+    "common": {
+        "cancel": "Batal",
+        "create": "Buat",
+        "delete": "Hapus",
+        "save": "Simpan",
+        "none": "Tidak ada",
+        "loading": "Memuat...",
+        "fetching": "Mengambil...",
+        "select": "Pilih",
+        "back": "Kembali",
+        "view_all": "Lihat semua",
+        "no_results": "Tidak ada hasil ditemukan",
+        "not_found": "Konten tidak ditemukan"
+    },
+    "sidebar": {
+        "home": "Beranda",
+        "instances": "Instance",
+        "settings": "Pengaturan",
+        "console": "Konsol"
+    },
+    "instances": {
+        "title": "Instance",
+        "create_new": "Instance Baru",
+        "no_instances": "Tidak ada instance ditemukan",
+        "count_label": "instance terdaftar",
+        "modal": {
+            "title": "Instance Baru",
+            "name_label": "Nama Instance *",
+            "name_placeholder": "Instance Saya",
+            "desc_label": "Deskripsi (Opsional)",
+            "desc_placeholder": "Deskripsi instance...",
+            "loader_label": "Mod Loader",
+            "loader_version_label": "Versi Loader",
+            "mc_version_label": "Versi Minecraft",
+            "filter_label": "Filter",
+            "search_placeholder": "Cari versi...",
+            "no_matching_versions": "Tidak ada versi yang cocok",
+            "tab_vanilla": "Vanilla / Modded",
+            "tab_modpack": "Modpack"
+        },
+        "card": {
+            "last_played": "Terakhir dimainkan",
+            "mods_count": "Mod",
+            "play": "Main",
+            "add_mod": "Tambah Mod",
+            "edit_mods": "Edit Mod"
+        }
+    },
+    "settings": {
+        "title": "Pengaturan",
+        "description": "Kelola pengaturan aplikasi",
+        "categories": {
+            "account": "Akun",
+            "minecraft": "Minecraft",
+            "general": "Umum",
+            "appearance": "Tampilan",
+            "about": "Tentang"
+        },
+        "account": {
+            "title": "Manajemen Akun",
+            "subtitle": "Akun Microsoft yang sedang masuk",
+            "not_logged_in": "Belum masuk",
+            "login_btn": "Masuk dengan Microsoft",
+            "logout_btn": "Keluar",
+            "header_title": "Manajemen Akun",
+            "header_desc": "Kelola informasi akun yang masuk.",
+            "active": "Aktif",
+            "xbox_account": "Akun Xbox Live",
+            "other_accounts": "Akun Lainnya",
+            "switch": "Ganti",
+            "add_account": "Tambah Akun Lain"
+        },
+        "minecraft": {
+            "title": "Pengaturan Minecraft",
+            "java_path": "Path Java",
+            "java_desc": "Lokasi executable Java",
+            "auto_detect": "Deteksi Otomatis",
+            "browse": "Jelajahi",
+            "memory_title": "Alokasi Memori",
+            "memory_min": "Memori Min",
+            "memory_max": "Memori Maks",
+            "java_versions_found": "{count} versi Java ditemukan",
+            "runtime_title": "Runtime Environment",
+            "runtime_desc": "Kelola runtime Minecraft dan pengaturan memori.",
+            "java_installations": "Instalasi Java",
+            "ram_allocation": "Alokasi RAM",
+            "min_ram": "Minimum (Xms)",
+            "max_ram": "Maksimum (Xmx)",
+            "install": "Pasang",
+            "detect": "Deteksi",
+            "lts": "LTS",
+            "latest": "Terbaru",
+            "legacy": "Lawas",
+            "not_set": "Belum diatur",
+            "test_btn": "Tes",
+            "test_title": "Tes Instalasi",
+            "valid": "Valid",
+            "failed": "Gagal"
+        },
+        "general": {
+            "title": "Pengaturan Umum",
+            "language": "Bahasa",
+            "language_desc": "Pilih bahasa antarmuka",
+            "launcher_behavior": "Perilaku Launcher",
+            "close_on_launch": "Tutup launcher saat game dimulai",
+            "launcher_preferences": "Preferensi Launcher",
+            "advanced_title": "Pengaturan Lanjutan",
+            "root_dir": "Direktori Root",
+            "root_dir_desc": "Direktori tempat launcher menyimpan semua file. Perubahan berlaku setelah restart.",
+            "change": "Ubah",
+            "app_cache": "Cache Aplikasi",
+            "app_cache_desc": "Launcher menyimpan cache untuk mempercepat pemuatan. Bersihkan untuk memuat ulang paksa.",
+            "purge_cache": "Bersihkan cache",
+            "max_downloads": "Maks download bersamaan",
+            "max_downloads_desc": "Maks file diunduh sekaligus. Kurangi jika internet lambat.",
+            "max_writes": "Maks tulis bersamaan",
+            "max_writes_desc": "Maks file ditulis ke disk sekaligus. Kurangi jika ada error I/O."
+        },
+        "about": {
+            "title": "Tentang ReaLauncher",
+            "version": "Versi",
+            "author": "Pembuat",
+            "links": "Tautan",
+            "github": "Repositori GitHub",
+            "discord": "Server Discord",
+            "tagline": "Launcher Minecraft Generasi Berikutnya",
+            "build_info": "v0.2.0-BETA • BUILD PREMIUM",
+            "source_code": "Kode Sumber",
+            "community": "Komunitas",
+            "copyright": "© 2026 Proyek ReaLauncher. Didistribusikan di bawah Lisensi MIT. Minecraft adalah merek dagang Mojang AB."
+        },
+        "browser": {
+            "title": "File Browser",
+            "select_file": "Pilih File",
+            "select_folder": "Pilih Folder",
+            "quick_access": "Akses Cepat",
+            "home": "Beranda",
+            "drives": "Drive",
+            "empty": "Folder ini kosong"
+        },
+        "appearance": {
+            "title": "Tampilan",
+            "description": "Sesuaikan tampilan dan nuansa peluncur.",
+            "fontFamily": "Keluarga Font",
+            "colorTheme": "Tema Warna",
+            "fonts": {
+                "inter": "Inter (Default)",
+                "minecraft": "Minecraft",
+                "system": "UI Sistem"
+            },
+            "colors": {
+                "violet": "Violet",
+                "emerald": "Zamrud",
+                "rose": "Mawar",
+                "amber": "Amber",
+                "blue": "Biru",
+                "orange": "Oranye"
+            },
+            "active": "Aktif",
+            "apply": "Terapkan"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "AKSES DITOLAK",
+            "desc": "UI ReaLauncher tidak dapat diakses melalui browser web standar. Silakan luncurkan aplikasi menggunakan executable desktop resmi.",
+            "code": "PERCOBAAN_AKSES_BROWSER_TIDAK_SAH"
+        },
+        "notifications": {
+            "downloading": "Mengunduh",
+            "downloading_mc": "Mengunduh Minecraft",
+            "downloading_modpack": "Mengunduh Modpack",
+            "installing_java": "Memasang Java",
+            "installing_loader": "Memasang Loader",
+            "downloading_assets": "Mengunduh Aset",
+            "verifying": "Memverifikasi File",
+            "detecting": "Mendeteksi Konten",
+            "loading_game": "Memuat Game"
+        },
+        "ready_to_play": "Siap main",
+        "last_played": "Terakhir dimainkan {date}",
+        "welcome_back": "Selamat datang kembali, {name}!",
+        "welcome_description": "Siap untuk petualangan berikutnya? Buat instance baru atau temukan modpack populer di bawah.",
+        "actions": {
+            "jump_in": "MULAI"
+        },
+        "loaders": {
+            "vanilla": "Vanilla"
+        },
+        "sections": {
+            "discover_modpack": "Temukan modpack",
+            "discover_mod": "Temukan mod"
+        },
+        "console": {
+            "logs_count": "log",
+            "filtered_from": "(difilter dari {count})",
+            "export": "Ekspor",
+            "clear": "Bersihkan",
+            "search_placeholder": "Cari log...",
+            "auto_scroll_on": "Auto-scroll: ON",
+            "auto_scroll_off": "Auto-scroll: OFF",
+            "no_logs": "Belum ada log"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "Modpack",
+            "mod": "Mod",
+            "resourcepack": "Resource Pack",
+            "datapack": "Datapack",
+            "shader": "Shader"
+        },
+        "sort": {
+            "relevance": "Relevansi",
+            "downloads": "Unduhan",
+            "follows": "Pengikut",
+            "newest": "Terbaru",
+            "updated": "Diperbarui"
+        },
+        "search_placeholder": "Cari konten..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "Konten",
+            "worlds": "Dunia",
+            "logs": "Log",
+            "install": "Pasang Konten"
+        },
+        "content_types": {
+            "mods": "Mod",
+            "resourcepacks": "Resource Pack",
+            "shaders": "Shader",
+            "datapacks": "Datapack"
+        },
+        "actions": {
+            "back": "Kembali ke Instance",
+            "settings": "Pengaturan",
+            "open_folder": "Buka Folder",
+            "launching": "Meluncurkan...",
+            "play": "Main",
+            "change_icon": "Ubah"
+        },
+        "filters": {
+            "title": "Filter",
+            "all": "Semua",
+            "enabled": "Aktif",
+            "disabled": "Nonaktif",
+            "no_metadata": "Tanpa Metadata",
+            "refresh": "Segarkan"
+        },
+        "search_placeholder": "Cari proyek..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "Kustom",
+            "modpack": "Modpack",
+            "launcher": "Impor"
+        },
+        "custom": {
+            "icon_select": "Pilih Ikon"
+        },
+        "modpack": {
+            "search_placeholder": "Cari modpack...",
+            "import_file": "Impor dari file"
+        },
+        "launcher": {
+            "scan": "Pindai",
+            "select_all": "Pilih Semua",
+            "deselect_all": "Batal Pilih Semua",
+            "selected_count": "{count} dari {total} dipilih",
+            "import_selected": "Impor Terpilih"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "Deskripsi",
+            "versions": "Versi",
+            "gallery": "Galeri"
+        },
+        "info": {
+            "by": "oleh {authors}",
+            "downloads": "unduhan",
+            "followers": "pengikut",
+            "updated": "Diperbarui {date}",
+            "created": "Dibuat",
+            "license": "Lisensi",
+            "external_links": "Tautan Luar",
+            "view_on": "Lihat di {source}"
+        },
+        "actions": {
+            "back_to_instance": "Kembali ke instance",
+            "installed": "Terpasang",
+            "install": "Pasang"
+        },
+        "versions": {
+            "game_version": "Versi game",
+            "all_versions": "Semua versi",
+            "channels": "Channel",
+            "table": {
+                "name": "Nama",
+                "version": "Versi game",
+                "platforms": "Platform",
+                "published": "Dipublikasikan",
+                "downloads": "Unduhan",
+                "actions": "Aksi"
+            },
+            "no_versions": "Versi tidak ditemukan"
+        },
+        "gallery": {
+            "no_images": "Tidak ada gambar tersedia"
+        }
+    }
+}

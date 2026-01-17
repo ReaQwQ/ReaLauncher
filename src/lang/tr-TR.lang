@@ -1,0 +1,314 @@
+{
+    "common": {
+        "cancel": "iptal",
+        "create": "Oluştur",
+        "delete": "Sil",
+        "save": "Kaydet",
+        "none": "Hiçbiri",
+        "loading": "Yükleniyor...",
+        "fetching": "Getiriliyor...",
+        "select": "Seç",
+        "back": "Geri",
+        "view_all": "Hepsini gör",
+        "no_results": "Sonuç bulunamadı",
+        "not_found": "İçerik bulunamadı"
+    },
+    "sidebar": {
+        "home": "Ana Sayfa",
+        "instances": "Kurulumlar",
+        "settings": "Ayarlar",
+        "console": "Konsol"
+    },
+    "instances": {
+        "title": "Kurulumlar",
+        "create_new": "Yeni Kurulum",
+        "no_instances": "Kurulum bulunamadı",
+        "count_label": "kurulum kayıtlı",
+        "modal": {
+            "title": "Yeni Kurulum",
+            "name_label": "Kurulum Adı *",
+            "name_placeholder": "Kurulumum",
+            "desc_label": "Açıklama (İsteğe bağlı)",
+            "desc_placeholder": "Kurulum açıklaması...",
+            "loader_label": "Mod Yükleyici",
+            "loader_version_label": "Yükleyici Sürümü",
+            "mc_version_label": "Minecraft Sürümü",
+            "filter_label": "Filtreler",
+            "search_placeholder": "Sürüm ara...",
+            "no_matching_versions": "Eşleşen sürüm bulunamadı",
+            "tab_vanilla": "Vanilla / Modlu",
+            "tab_modpack": "Mod Paketi"
+        },
+        "card": {
+            "last_played": "Son oynanan",
+            "mods_count": "Modlar",
+            "play": "Oyna",
+            "add_mod": "Mod Ekle",
+            "edit_mods": "Modları Düzenle"
+        }
+    },
+    "settings": {
+        "title": "Ayarlar",
+        "description": "Uygulama ayarlarını yönet",
+        "categories": {
+            "account": "Hesap",
+            "minecraft": "Minecraft",
+            "general": "Genel",
+            "appearance": "Görünüm",
+            "about": "Hakkında"
+        },
+        "account": {
+            "title": "Hesap Yönetimi",
+            "subtitle": "Şu an giriş yapılmış Microsoft hesabı",
+            "not_logged_in": "Giriş yapılmadı",
+            "login_btn": "Microsoft ile giriş yap",
+            "logout_btn": "Çıkış yap",
+            "header_title": "Hesap Yönetimi",
+            "header_desc": "Giriş yapılmış hesap bilgilerini yönet.",
+            "active": "Aktif",
+            "xbox_account": "Xbox Live Hesabı",
+            "other_accounts": "Diğer Hesaplar",
+            "switch": "Değiştir",
+            "add_account": "Başka Hesap Ekle"
+        },
+        "minecraft": {
+            "title": "Minecraft Ayarları",
+            "java_path": "Java Yolu",
+            "java_desc": "Java yürütülebilir dosyasının yolu",
+            "auto_detect": "Otomatik algıla",
+            "browse": "Gözat",
+            "memory_title": "Bellek Tahsisi",
+            "memory_min": "Min Bellek",
+            "memory_max": "Maks Bellek",
+            "java_versions_found": "{count} Java sürümü bulundu",
+            "runtime_title": "Çalışma Zamanı Ortamı",
+            "runtime_desc": "Minecraft çalışma zamanı ve bellek ayarlarını yönet.",
+            "java_installations": "Java Kurulumları",
+            "ram_allocation": "RAM Tahsisi",
+            "min_ram": "Minimum (Xms)",
+            "max_ram": "Maksimum (Xmx)",
+            "install": "Yükle",
+            "detect": "Algıla",
+            "lts": "LTS",
+            "latest": "En Son",
+            "legacy": "Eski",
+            "not_set": "Ayarlanmadı",
+            "test_btn": "Test Et",
+            "test_title": "Kurulumu Test Et",
+            "valid": "Geçerli",
+            "failed": "Başarısız"
+        },
+        "general": {
+            "title": "Genel Ayarlar",
+            "language": "Dil",
+            "language_desc": "Arayüz dilini seçin",
+            "launcher_behavior": "Başlatıcı Davranışı",
+            "close_on_launch": "Oyun başladığında başlatıcıyı kapat",
+            "launcher_preferences": "Başlatıcı Tercihleri",
+            "advanced_title": "Gelişmiş Uygulama Ayarları",
+            "root_dir": "Kök Dizin",
+            "root_dir_desc": "Başlatıcının tüm dosyalarını sakladığı dizin. Değişiklikler yeniden başlatıldıktan sonra uygulanır.",
+            "change": "Değiştir",
+            "app_cache": "Uygulama Önbelleği",
+            "app_cache_desc": "Başlatıcı yüklemeyi hızlandırmak için verileri önbelleğe alır. Yeniden yüklemeyi zorlamak için temizleyin.",
+            "purge_cache": "Önbelleği temizle",
+            "max_downloads": "Maksimum eşzamanlı indirmeler",
+            "max_downloads_desc": "Aynı anda indirilecek maks. dosya. İnternet yavaşsa düşürün.",
+            "max_writes": "Maksimum eşzamanlı yazma",
+            "max_writes_desc": "Aynı anda diske yazılacak maks. dosya. G/Ç hataları alıyorsanız düşürün."
+        },
+        "about": {
+            "title": "ReaLauncher Hakkında",
+            "version": "Sürüm",
+            "author": "Yazar",
+            "links": "Bağlantılar",
+            "github": "GitHub Deposu",
+            "discord": "Discord Sunucusu",
+            "tagline": "Yeni Nesil Minecraft Başlatıcısı",
+            "build_info": "v0.2.0-BETA • PREMIUM YAPIM",
+            "source_code": "Kaynak Kodu",
+            "community": "Topluluk",
+            "copyright": "© 2026 ReaLauncher Projesi. MIT Lisansı altında dağıtılmaktadır. Minecraft, Mojang AB'nin ticari markasıdır."
+        },
+        "browser": {
+            "title": "Dosya Tarayıcısı",
+            "select_file": "Dosya Seç",
+            "select_folder": "Klasör Seç",
+            "quick_access": "Hızlı Erişim",
+            "home": "Ana Sayfa",
+            "drives": "Sürücüler",
+            "empty": "Bu klasör boş"
+        },
+        "appearance": {
+            "title": "Görünüm",
+            "description": "Başlatıcının görünümünü özelleştirin.",
+            "fontFamily": "Yazı Tipi",
+            "colorTheme": "Renk Teması",
+            "fonts": {
+                "inter": "Inter (Varsayılan)",
+                "minecraft": "Minecraft",
+                "system": "Sistem Arayüzü"
+            },
+            "colors": {
+                "violet": "Menekşe",
+                "emerald": "Zümrüt",
+                "rose": "Gül",
+                "amber": "Kehribar",
+                "blue": "Mavi",
+                "orange": "Turuncu"
+            },
+            "active": "Aktif",
+            "apply": "Uygula"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "ERİŞİM REDDEDİLDİ",
+            "desc": "ReaLauncher arayüzüne standart bir web tarayıcısı üzerinden erişilemez. Lütfen uygulamayı resmi masaüstü yürütülebilir dosyasıyla başlatın.",
+            "code": "YETKİSİZ_TARAYICI_ERİŞİM_GİRİŞİMİ"
+        },
+        "notifications": {
+            "downloading": "İndiriliyor",
+            "downloading_mc": "Minecraft İndiriliyor",
+            "downloading_modpack": "Mod Paketi İndiriliyor",
+            "installing_java": "Java Yükleniyor",
+            "installing_loader": "Yükleyici Kuruluyor",
+            "downloading_assets": "Varlıklar İndiriliyor",
+            "verifying": "Dosyalar Doğrulanıyor",
+            "detecting": "İçerik Algılanıyor",
+            "loading_game": "Oyun Yükleniyor"
+        },
+        "ready_to_play": "Oynamaya hazır",
+        "last_played": "Son oynanış: {date}",
+        "welcome_back": "Tekrar hoş geldin, {name}!",
+        "welcome_description": "Sonraki macerana hazır mısın? Yeni bir kurulum oluştur veya popüler mod paketlerini keşfet.",
+        "actions": {
+            "jump_in": "BAŞLA"
+        },
+        "loaders": {
+            "vanilla": "Vanilla"
+        },
+        "sections": {
+            "discover_modpack": "Bir mod paketi keşfet",
+            "discover_mod": "Modları keşfet"
+        },
+        "console": {
+            "logs_count": "kayıt",
+            "filtered_from": "({count} kayıttan filtrelendi)",
+            "export": "Dışa Aktar",
+            "clear": "Temizle",
+            "search_placeholder": "Kayıtları ara...",
+            "auto_scroll_on": "Oto-kaydırma: AÇIK",
+            "auto_scroll_off": "Oto-kaydırma: KAPALI",
+            "no_logs": "Henüz kayıt yok"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "Mod Paketleri",
+            "mod": "Modlar",
+            "resourcepack": "Kaynak Paketleri",
+            "datapack": "Veri Paketleri",
+            "shader": "Shaderlar"
+        },
+        "sort": {
+            "relevance": "Alaka",
+            "downloads": "İndirmeler",
+            "follows": "Takipçiler",
+            "newest": "En Yeni",
+            "updated": "Güncellendi"
+        },
+        "search_placeholder": "İçerik ara..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "İçerik",
+            "worlds": "Dünyalar",
+            "logs": "Kayıtlar",
+            "install": "İçerik Yükle"
+        },
+        "content_types": {
+            "mods": "Modlar",
+            "resourcepacks": "Kaynak Paketleri",
+            "shaders": "Shaderlar",
+            "datapacks": "Veri Paketleri"
+        },
+        "actions": {
+            "back": "Kurulumlara Dön",
+            "settings": "Ayarlar",
+            "open_folder": "Klasörü Aç",
+            "launching": "Başlatılıyor...",
+            "play": "Oyna",
+            "change_icon": "Değiştir"
+        },
+        "filters": {
+            "title": "Filtre",
+            "all": "Hepsi",
+            "enabled": "Etkin",
+            "disabled": "Devre Dışı",
+            "no_metadata": "Meta Veri Yok",
+            "refresh": "Yenile"
+        },
+        "search_placeholder": "Projeleri ara..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "Özel",
+            "modpack": "Mod Paketi",
+            "launcher": "İçe Aktar"
+        },
+        "custom": {
+            "icon_select": "Simge Seç"
+        },
+        "modpack": {
+            "search_placeholder": "Mod paketlerini ara...",
+            "import_file": "Dosyadan içe aktar"
+        },
+        "launcher": {
+            "scan": "Tara",
+            "select_all": "Hepsini Seç",
+            "deselect_all": "Seçimi Kaldır",
+            "selected_count": "{total} üzerinden {count} seçildi",
+            "import_selected": "Seçileni İçe Aktar"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "Açıklama",
+            "versions": "Sürümler",
+            "gallery": "Galeri"
+        },
+        "info": {
+            "by": "yazar: {authors}",
+            "downloads": "indirme",
+            "followers": "takipçi",
+            "updated": "Güncellendi: {date}",
+            "created": "Oluşturuldu",
+            "license": "Lisans",
+            "external_links": "Dış Bağlantılar",
+            "view_on": "{source}'da görüntüle"
+        },
+        "actions": {
+            "back_to_instance": "Kuruluma dön",
+            "installed": "Yüklendi",
+            "install": "Yükle"
+        },
+        "versions": {
+            "game_version": "Oyun sürümü",
+            "all_versions": "Tüm sürümler",
+            "channels": "Kanallar",
+            "table": {
+                "name": "Ad",
+                "version": "Oyun sürümü",
+                "platforms": "Platformlar",
+                "published": "Yayınlandı",
+                "downloads": "İndirmeler",
+                "actions": "Eylemler"
+            },
+            "no_versions": "Sürüm bulunamadı"
+        },
+        "gallery": {
+            "no_images": "Görsel yok"
+        }
+    }
+}

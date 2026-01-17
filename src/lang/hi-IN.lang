@@ -1,0 +1,314 @@
+{
+    "common": {
+        "cancel": "रद्द करें",
+        "create": "बनाएं",
+        "delete": "हटाएं",
+        "save": "सहेजें",
+        "none": "कोई नहीं",
+        "loading": "लोड हो रहा है...",
+        "fetching": "प्राप्त किया जा रहा है...",
+        "select": "चुनें",
+        "back": "वापस",
+        "view_all": "सभी देखें",
+        "no_results": "कोई परिणाम नहीं मिला",
+        "not_found": "सामग्री नहीं मिली"
+    },
+    "sidebar": {
+        "home": "होम",
+        "instances": "इंस्टेंसेस",
+        "settings": "सेटिंग्स",
+        "console": "कंसोल"
+    },
+    "instances": {
+        "title": "इंस्टेंसेस",
+        "create_new": "नया इंस्टेंस",
+        "no_instances": "कोई इंस्टेंस नहीं मिला",
+        "count_label": "इंस्टेंसेस पंजीकृत हैं",
+        "modal": {
+            "title": "नया इंस्टेंस",
+            "name_label": "इंस्टेंस का नाम *",
+            "name_placeholder": "मेरा इंस्टेंस",
+            "desc_label": "विवरण (वैकल्पिक)",
+            "desc_placeholder": "इंस्टेंस का विवरण...",
+            "loader_label": "मॉड लोडर",
+            "loader_version_label": "लोडर संस्करण",
+            "mc_version_label": "Minecraft संस्करण",
+            "filter_label": "फ़िल्टर",
+            "search_placeholder": "संस्करण खोजें...",
+            "no_matching_versions": "कोई मेल खाने वाला संस्करण नहीं मिला",
+            "tab_vanilla": "वेनिला / मॉड",
+            "tab_modpack": "मॉडपैक"
+        },
+        "card": {
+            "last_played": "अंतिम बार खेला गया",
+            "mods_count": "मॉड्स",
+            "play": "खेलें",
+            "add_mod": "मॉड जोड़ें",
+            "edit_mods": "मॉड संपादित करें"
+        }
+    },
+    "settings": {
+        "title": "सेटिंग्स",
+        "description": "एप्लिकेशन सेटिंग्स प्रबंधित करें",
+        "categories": {
+            "account": "खाता",
+            "minecraft": "Minecraft",
+            "general": "सामान्य",
+            "appearance": "दिखावट",
+            "about": "के बारे में"
+        },
+        "account": {
+            "title": "खाता प्रबंधन",
+            "subtitle": "वर्तमान में लॉग इन किया गया Microsoft खाता",
+            "not_logged_in": "लॉग इन नहीं है",
+            "login_btn": "Microsoft के साथ साइन इन करें",
+            "logout_btn": "साइन आउट करें",
+            "header_title": "खाता प्रबंधन",
+            "header_desc": "लॉग इन खाते की जानकारी प्रबंधित करें।",
+            "active": "सक्रिय",
+            "xbox_account": "Xbox Live खाता",
+            "other_accounts": "अन्य खाते",
+            "switch": "बदलें",
+            "add_account": "एक और खाता जोड़ें"
+        },
+        "minecraft": {
+            "title": "Minecraft सेटिंग्स",
+            "java_path": "Java पथ",
+            "java_desc": "Java निष्पादन योग्य का पथ",
+            "auto_detect": "स्वतः पता लगाएं",
+            "browse": "ब्राउज़ करें",
+            "memory_title": "मेमोरी आवंटन",
+            "memory_min": "न्यूनतम मेमोरी",
+            "memory_max": "अधिकतम मेमोरी",
+            "java_versions_found": "{count} Java संस्करण मिले",
+            "runtime_title": "रनटाइम वातावरण",
+            "runtime_desc": "Minecraft रनटाइम और मेमोरी सेटिंग्स प्रबंधित करें।",
+            "java_installations": "Java इंस्टॉलेशन्स",
+            "ram_allocation": "RAM आवंटन",
+            "min_ram": "न्यूनतम (Xms)",
+            "max_ram": "अधिकतम (Xmx)",
+            "install": "इंस्टॉल करें",
+            "detect": "पता लगाएं",
+            "lts": "LTS",
+            "latest": "नवीनतम",
+            "legacy": "पुराना",
+            "not_set": "सेट नहीं है",
+            "test_btn": "परीक्षण करें",
+            "test_title": "इंस्टॉलेशन का परीक्षण करें",
+            "valid": "वैध",
+            "failed": "विफल"
+        },
+        "general": {
+            "title": "सामान्य सेटिंग्स",
+            "language": "भाषा",
+            "language_desc": "इंटरफ़ेस की भाषा चुनें",
+            "launcher_behavior": "लॉन्चर व्यवहार",
+            "close_on_launch": "खेल शुरू होने पर लॉन्चर बंद करें",
+            "launcher_preferences": "लॉन्चर प्राथमिकताएं",
+            "advanced_title": "उन्नत ऐप सेटिंग्स",
+            "root_dir": "रूट डायरेक्टरी",
+            "root_dir_desc": "वह डायरेक्टरी जहां लॉन्चर अपनी सभी फाइलें स्टोर करता है। परिवर्तन पुनरारंभ करने के बाद लागू होंगे।",
+            "change": "बदलें",
+            "app_cache": "ऐप कैश",
+            "app_cache_desc": "लॉन्चर लोडिंग को तेज करने के लिए डेटा कैश करता है। पुनः लोड करने के लिए साफ़ करें।",
+            "purge_cache": "कैश साफ़ करें",
+            "max_downloads": "अधिकतम समवर्ती डाउनलोड",
+            "max_downloads_desc": "एक साथ डाउनलोड की जाने वाली अधिकतम फाइलें। यदि इंटरनेट धीमा है तो इसे कम करें।",
+            "max_writes": "अधिकतम समवर्ती लेखन",
+            "max_writes_desc": "एक साथ डिस्क पर लिखी जाने वाली अधिकतम फाइलें। यदि I/O त्रुटियां आ रही हैं तो इसे कम करें।"
+        },
+        "about": {
+            "title": "ReaLauncher के बारे में",
+            "version": "संस्करण",
+            "author": "लेखक",
+            "links": "लिंक",
+            "github": "GitHub रिपॉजिटरी",
+            "discord": "Discord सर्वर",
+            "tagline": "अगली पीढ़ी का Minecraft लॉन्चर",
+            "build_info": "v0.2.0-BETA • प्रीमियम बिल्ड",
+            "source_code": "सोर्स कोड",
+            "community": "समुदाय",
+            "copyright": "© 2026 ReaLauncher प्रोजेक्ट। MIT लाइसेंस के तहत वितरित। Minecraft Mojang AB का ट्रेडमार्क है।"
+        },
+        "browser": {
+            "title": "फ़ाइल ब्राउज़र",
+            "select_file": "फ़ाइल चुनें",
+            "select_folder": "फ़ोल्डर चुनें",
+            "quick_access": "त्वरित पहुँच",
+            "home": "होम",
+            "drives": "ड्राइव्स",
+            "empty": "यह फ़ोल्डर खाली है"
+        },
+        "appearance": {
+            "title": "उपस्थिति",
+            "description": "लॉन्चर के रूप और अनुभव को अनुकूलित करें।",
+            "fontFamily": "फ़ॉन्ट परिवार",
+            "colorTheme": "रंग विषय",
+            "fonts": {
+                "inter": "Inter (डिफ़ॉल्ट)",
+                "minecraft": "Minecraft",
+                "system": "सिस्टम UI"
+            },
+            "colors": {
+                "violet": "बैंगनी",
+                "emerald": "पन्ना",
+                "rose": "गुलाब",
+                "amber": "एम्बर",
+                "blue": "नीला",
+                "orange": "नारंगी"
+            },
+            "active": "सक्रिय",
+            "apply": "लागू करें"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "पहुँच अस्वीकृत",
+            "desc": "ReaLauncher UI को मानक वेब ब्राउज़र के माध्यम से एक्सेस नहीं किया जा सकता। कृपया आधिकारिक डेस्कटॉप निष्पादन योग्य का उपयोग करके एप्लिकेशन लॉन्च करें।",
+            "code": "अनाधिकृत_ब्राउज़र_एक्सेस_प्रयास"
+        },
+        "notifications": {
+            "downloading": "डाउनलोड हो रहा है",
+            "downloading_mc": "Minecraft डाउनलोड हो रहा है",
+            "downloading_modpack": "मॉडपैक डाउनलोड हो रहा है",
+            "installing_java": "Java इंस्टॉल हो रहा है",
+            "installing_loader": "लोडर इंस्टॉल हो रहा है",
+            "downloading_assets": "एसेट्स डाउनलोड हो रहे हैं",
+            "verifying": "फ़ाइलों की पुष्टि हो रही है",
+            "detecting": "सामग्री का पता लगाया जा रहा है",
+            "loading_game": "गेम लोड हो रहा है"
+        },
+        "ready_to_play": "खेलने के लिए तैयार",
+        "last_played": "अंतिम बार खेला गया {date}",
+        "welcome_back": "वापसी पर स्वागत है, {name}!",
+        "welcome_description": "अपने अगले साहसिक कार्य के लिए तैयार हैं? एक नया इंस्टेंस बनाएं या नीचे लोकप्रिय मॉडपैक खोजें।",
+        "actions": {
+            "jump_in": "शुरू करें"
+        },
+        "loaders": {
+            "vanilla": "वेनिला"
+        },
+        "sections": {
+            "discover_modpack": "एक मॉडपैक खोजें",
+            "discover_mod": "मॉड खोजें"
+        },
+        "console": {
+            "logs_count": "लॉग्स",
+            "filtered_from": "({count} में से फ़िल्टर किया गया)",
+            "export": "निर्यात करें",
+            "clear": "साफ़ करें",
+            "search_placeholder": "लॉग खोजें...",
+            "auto_scroll_on": "ऑटो-स्क्रॉल: चालू",
+            "auto_scroll_off": "ऑटो-स्क्रॉल: बंद",
+            "no_logs": "अभी कोई लॉग नहीं"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "मॉडपैक",
+            "mod": "मॉड",
+            "resourcepack": "संसाधन पैक",
+            "datapack": "डेटा पैक",
+            "shader": "शेडर"
+        },
+        "sort": {
+            "relevance": "प्रासंगिकता",
+            "downloads": "डाउनलोड",
+            "follows": "फ़ॉलोअर्स",
+            "newest": "नवीनतम",
+            "updated": "अपडेट किया गया"
+        },
+        "search_placeholder": "सामग्री खोजें..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "सामग्री",
+            "worlds": "दुनिया",
+            "logs": "लॉग्स",
+            "install": "सामग्री इंस्टॉल करें"
+        },
+        "content_types": {
+            "mods": "मॉड्स",
+            "resourcepacks": "संसाधन पैक",
+            "shaders": "शेडर",
+            "datapacks": "डेटा पैक"
+        },
+        "actions": {
+            "back": "इंस्टेंसेस पर वापस जाएं",
+            "settings": "सेटिंग्स",
+            "open_folder": "फ़ोल्डर खोलें",
+            "launching": "लॉन्च हो रहा है...",
+            "play": "खेलें",
+            "change_icon": "बदलें"
+        },
+        "filters": {
+            "title": "फ़िल्टर",
+            "all": "सभी",
+            "enabled": "सक्षम",
+            "disabled": "अक्षम",
+            "no_metadata": "कोई मेटाडेटा नहीं",
+            "refresh": "ताज़ा करें"
+        },
+        "search_placeholder": "परियोजनाएं खोजें..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "कस्टम",
+            "modpack": "मॉडपैक",
+            "launcher": "आयात करें"
+        },
+        "custom": {
+            "icon_select": "आइकन चुनें"
+        },
+        "modpack": {
+            "search_placeholder": "मॉडपैक खोजें...",
+            "import_file": "फ़ाइल से आयात करें"
+        },
+        "launcher": {
+            "scan": "स्कैन करें",
+            "select_all": "सभी चुनें",
+            "deselect_all": "सभी को अचयनित करें",
+            "selected_count": "{total} में से {count} चुने गए",
+            "import_selected": "चयनित आयात करें"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "विवरण",
+            "versions": "संस्करण",
+            "gallery": "गेलरी"
+        },
+        "info": {
+            "by": "{authors} द्वारा",
+            "downloads": "डाउनलोड",
+            "followers": "फ़ॉलोअर्स",
+            "updated": "अपडेट किया गया {date}",
+            "created": "बनाया गया",
+            "license": "लाइसेंस",
+            "external_links": "बाहरी लिंक",
+            "view_on": "{source} पर देखें"
+        },
+        "actions": {
+            "back_to_instance": "इंस्टेंस पर वापस",
+            "installed": "इंस्टॉल किया गया",
+            "install": "इंस्टॉल करें"
+        },
+        "versions": {
+            "game_version": "गेम संस्करण",
+            "all_versions": "सभी संस्करण",
+            "channels": "चैनल",
+            "table": {
+                "name": "नाम",
+                "version": "गेम संस्करण",
+                "platforms": "प्लेटफ़ॉर्म",
+                "published": "प्रकाशित",
+                "downloads": "डाउनलोड",
+                "actions": "क्रियाएं"
+            },
+            "no_versions": "कोई संस्करण नहीं मिला"
+        },
+        "gallery": {
+            "no_images": "कोई चित्र उपलब्ध नहीं"
+        }
+    }
+}

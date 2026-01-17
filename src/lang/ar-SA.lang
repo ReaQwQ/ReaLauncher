@@ -1,0 +1,314 @@
+{
+    "common": {
+        "cancel": "إلغاء",
+        "create": "إنشاء",
+        "delete": "حذف",
+        "save": "حفظ",
+        "none": "لا شيء",
+        "loading": "جارٍ التحميل...",
+        "fetching": "جارٍ الجلب...",
+        "select": "تحديد",
+        "back": "رجوع",
+        "view_all": "عرض الكل",
+        "no_results": "لم يتم العثور على نتائج",
+        "not_found": "المحتوى غير موجود"
+    },
+    "sidebar": {
+        "home": "الرئيسية",
+        "instances": "المثيلات",
+        "settings": "الإعدادات",
+        "console": "وحدة التحكم"
+    },
+    "instances": {
+        "title": "المثيلات",
+        "create_new": "مثيل جديد",
+        "no_instances": "لا توجد مثيلات",
+        "count_label": "مثيل مسجل",
+        "modal": {
+            "title": "مثيل جديد",
+            "name_label": "اسم المثيل *",
+            "name_placeholder": "محيلي",
+            "desc_label": "الوصف (اختياري)",
+            "desc_placeholder": "وصف المثيل...",
+            "loader_label": "محمل التعديلات",
+            "loader_version_label": "إصدار المحمل",
+            "mc_version_label": "إصدار Minecraft",
+            "filter_label": "تصفية",
+            "search_placeholder": "بحث عن إصدار...",
+            "no_matching_versions": "لا توجد إصدارات مطابقة",
+            "tab_vanilla": "فانيلا / معدل",
+            "tab_modpack": "حزمة تعديلات"
+        },
+        "card": {
+            "last_played": "آخر لعب",
+            "mods_count": "تعديلات",
+            "play": "لعب",
+            "add_mod": "إضافة تعديل",
+            "edit_mods": "تعديل التعديلات"
+        }
+    },
+    "settings": {
+        "title": "الإعدادات",
+        "description": "إدارة إعدادات التطبيق",
+        "categories": {
+            "account": "الحساب",
+            "minecraft": "Minecraft",
+            "general": "عام",
+            "appearance": "المظهر",
+            "about": "حول"
+        },
+        "account": {
+            "title": "إدارة الحساب",
+            "subtitle": "حساب Microsoft المسجل حاليًا",
+            "not_logged_in": "غير مسجل الدخول",
+            "login_btn": "تسجيل الدخول باستخدام Microsoft",
+            "logout_btn": "تسجيل الخروج",
+            "header_title": "إدارة الحساب",
+            "header_desc": "إدارة معلومات الحساب المسجل.",
+            "active": "نشط",
+            "xbox_account": "حساب Xbox Live",
+            "other_accounts": "حسابات أخرى",
+            "switch": "تبديل",
+            "add_account": "إضافة حساب آخر"
+        },
+        "minecraft": {
+            "title": "إعدادات Minecraft",
+            "java_path": "مسار Java",
+            "java_desc": "مسار ملف Java القابل للتنفيذ",
+            "auto_detect": "كشف تلقائي",
+            "browse": "استعراض",
+            "memory_title": "تخصيص الذاكرة",
+            "memory_min": "الحد الأدنى للذاكرة",
+            "memory_max": "الحد الأقصى للذاكرة",
+            "java_versions_found": "تم العثور على {count} إصدار Java",
+            "runtime_title": "بيئة التشغيل",
+            "runtime_desc": "إدارة وقت تشغيل Minecraft وإعدادات الذاكرة.",
+            "java_installations": "تثبيتات Java",
+            "ram_allocation": "تخصيص RAM",
+            "min_ram": "الحد الأدنى (Xms)",
+            "max_ram": "الحد الأقصى (Xmx)",
+            "install": "تثبيت",
+            "detect": "كشف",
+            "lts": "LTS",
+            "latest": "الأحدث",
+            "legacy": "قديم",
+            "not_set": "غير محدد",
+            "test_btn": "اختبار",
+            "test_title": "اختبار التثبيت",
+            "valid": "صالح",
+            "failed": "فشل"
+        },
+        "general": {
+            "title": "إعدادات عامة",
+            "language": "اللغة",
+            "language_desc": "اختر لغة الواجهة",
+            "launcher_behavior": "سلوك المشغل",
+            "close_on_launch": "إغلاق المشغل عند بدء اللعبة",
+            "launcher_preferences": "تفضيلات المشغل",
+            "advanced_title": "إعدادات التطبيق المتقدمة",
+            "root_dir": "الدليل الجذر",
+            "root_dir_desc": "الدليل الذي يخزن فيه المشغل جميع الملفات. يسري التغيير بعد إعادة التشغيل.",
+            "change": "تغيير",
+            "app_cache": "ذاكرة التخزين المؤقت للتطبيق",
+            "app_cache_desc": "يقوم المشغل بتخزين البيانات مؤقتًا لتسريع التحميل. امسح لإعادة تحميل قسري.",
+            "purge_cache": "مسح الذاكرة المؤقتة",
+            "max_downloads": "الحد الأقصى للتنزيلات المتزامنة",
+            "max_downloads_desc": "أقصى عدد ملفات يتم تنزيلها في وقت واحد. قلل إذا كان الإنترنت بطيئًا.",
+            "max_writes": "الحد الأقصى للكتابة المتزامنة",
+            "max_writes_desc": "أقصى عدد ملفات يتم كتابتها على القرص في وقت واحد. قلل في حالة حدوث أخطاء الإدخال/الإخراج."
+        },
+        "about": {
+            "title": "حول ReaLauncher",
+            "version": "الإصدار",
+            "author": "المؤلف",
+            "links": "روابط",
+            "github": "مستودع GitHub",
+            "discord": "خادم Discord",
+            "tagline": "الجيل القادم من مشغلات Minecraft",
+            "build_info": "v0.2.0-BETA • إصدار مميز",
+            "source_code": "شفرة المصدر",
+            "community": "المجتمع",
+            "copyright": "© 2026 مشروع ReaLauncher. موزع تحت رخصة MIT. Minecraft هي علامة تجارية لشركة Mojang AB."
+        },
+        "browser": {
+            "title": "متصفح الملفات",
+            "select_file": "تحديد ملف",
+            "select_folder": "تحديد مجلد",
+            "quick_access": "وصول سريع",
+            "home": "الرئيسية",
+            "drives": "محركات الأقراص",
+            "empty": "هذا المجلد فارغ"
+        },
+        "appearance": {
+            "title": "المظهر",
+            "description": "تخصيص مظهر المشغل.",
+            "fontFamily": "عائلة الخط",
+            "colorTheme": "نسق الألوان",
+            "fonts": {
+                "inter": "Inter (افتراضي)",
+                "minecraft": "Minecraft",
+                "system": "واجهة النظام"
+            },
+            "colors": {
+                "violet": "بنفسجي",
+                "emerald": "زمردي",
+                "rose": "وردي",
+                "amber": "كهرماني",
+                "blue": "أزرق",
+                "orange": "برتقالي"
+            },
+            "active": "نشط",
+            "apply": "تطبيق"
+        }
+    },
+    "app": {
+        "denied": {
+            "title": "تم رفض الوصول",
+            "desc": "لا يمكن الوصول إلى واجهة ReaLauncher عبر متصفح ويب قياسي. يرجى تشغيل التطبيق باستخدام الملف القابل للتنفيذ الرسمي لسطح المكتب.",
+            "code": "محاولة_وصول_غير_مصرح_بها_من_المتصفح"
+        },
+        "notifications": {
+            "downloading": "جارٍ التنزيل",
+            "downloading_mc": "جارٍ تنزيل Minecraft",
+            "downloading_modpack": "جارٍ تنزيل حزمة التعديلات",
+            "installing_java": "جارٍ تثبيت Java",
+            "installing_loader": "جارٍ تثبيت المحمل",
+            "downloading_assets": "جارٍ تنزيل الأصول",
+            "verifying": "جارٍ التحقق من الملفات",
+            "detecting": "جارٍ الكشف عن المحتوى",
+            "loading_game": "جارٍ تحميل اللعبة"
+        },
+        "ready_to_play": "جاهز للعب",
+        "last_played": "لعبت آخر مرة {date}",
+        "welcome_back": "مرحبًا بعودتك، {name}!",
+        "welcome_description": "هل أنت مستعد لمغامرتك التالية؟ أنشئ مثيلًا جديدًا أو اكتشف حزم التعديل الشهيرة أدناه.",
+        "actions": {
+            "jump_in": "ابدأ"
+        },
+        "loaders": {
+            "vanilla": "فانيلا"
+        },
+        "sections": {
+            "discover_modpack": "اكتشف حزمة تعديلات",
+            "discover_mod": "اكتشف التعديلات"
+        },
+        "console": {
+            "logs_count": "سجلات",
+            "filtered_from": "(تمت التصفية من {count})",
+            "export": "تصدير",
+            "clear": "مسح",
+            "search_placeholder": "بحث في السجلات...",
+            "auto_scroll_on": "تمرير تلقائي: تشغيل",
+            "auto_scroll_off": "تمرير تلقائي: إيقاف",
+            "no_logs": "لا توجد سجلات بعد"
+        }
+    },
+    "discover": {
+        "tabs": {
+            "modpack": "حزمة تعديلات",
+            "mod": "تعديل",
+            "resourcepack": "حزمة موارد",
+            "datapack": "حزمة بيانات",
+            "shader": "تظليل"
+        },
+        "sort": {
+            "relevance": "الصلة",
+            "downloads": "التنزيلات",
+            "follows": "المتابعون",
+            "newest": "الأحدث",
+            "updated": "تم التحديث"
+        },
+        "search_placeholder": "بحث عن محتوى..."
+    },
+    "instance_detail": {
+        "tabs": {
+            "content": "المحتوى",
+            "worlds": "العوالم",
+            "logs": "السجلات",
+            "install": "تثبيت محتوى"
+        },
+        "content_types": {
+            "mods": "تعديلات",
+            "resourcepacks": "حزم الموارد",
+            "shaders": "تظليل",
+            "datapacks": "حزم البيانات"
+        },
+        "actions": {
+            "back": "العودة إلى المثيل",
+            "settings": "الإعدادات",
+            "open_folder": "فتح المجلد",
+            "launching": "جارٍ الإطلاق...",
+            "play": "لعب",
+            "change_icon": "تغيير"
+        },
+        "filters": {
+            "title": "تصفية",
+            "all": "الكل",
+            "enabled": "مفعل",
+            "disabled": "معطل",
+            "no_metadata": "بدون بيانات وصفية",
+            "refresh": "تحديث"
+        },
+        "search_placeholder": "بحث في المشاريع..."
+    },
+    "create_instance": {
+        "tabs": {
+            "custom": "مخصص",
+            "modpack": "حزمة تعديلات",
+            "launcher": "استيراد"
+        },
+        "custom": {
+            "icon_select": "تحديد أيقونة"
+        },
+        "modpack": {
+            "search_placeholder": "بحث عن حزمة تعديلات...",
+            "import_file": "استيراد من ملف"
+        },
+        "launcher": {
+            "scan": "فحص",
+            "select_all": "تحديد الكل",
+            "deselect_all": "إلغاء تحديد الكل",
+            "selected_count": "تم تحديد {count} من {total}",
+            "import_selected": "استيراد المحدد"
+        }
+    },
+    "content_detail": {
+        "tabs": {
+            "description": "الوصف",
+            "versions": "الإصدارات",
+            "gallery": "المعرض"
+        },
+        "info": {
+            "by": "بواسطة {authors}",
+            "downloads": "تنزيلات",
+            "followers": "متابعين",
+            "updated": "تم التحديث {date}",
+            "created": "تم الإنشاء",
+            "license": "الرخصة",
+            "external_links": "روابط خارجية",
+            "view_on": "عرض على {source}"
+        },
+        "actions": {
+            "back_to_instance": "العودة إلى المثيل",
+            "installed": "تم التثبيت",
+            "install": "تثبيت"
+        },
+        "versions": {
+            "game_version": "إصدار اللعبة",
+            "all_versions": "جميع الإصدارات",
+            "channels": "القنوات",
+            "table": {
+                "name": "الاسم",
+                "version": "إصدار اللعبة",
+                "platforms": "المنصات",
+                "published": "تاريخ النشر",
+                "downloads": "التنزيلات",
+                "actions": "إجراءات"
+            },
+            "no_versions": "لم يتم العثور على إصدارات"
+        },
+        "gallery": {
+            "no_images": "لا توجد صور متاحة"
+        }
+    }
+}
