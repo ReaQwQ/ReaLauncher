@@ -252,6 +252,12 @@
             "refresh": "刷新"
         },
         "search_placeholder": "搜索项目..."
+        ,"delete_modal": {
+            "title": "删除内容",
+            "message": "您确定要删除 {name} 吗？此操作无法撤销。",
+            "confirm": "删除",
+            "cancel": "取消"
+        }
     },
     "create_instance": {
         "tabs": {

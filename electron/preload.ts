@@ -1,148 +1,160 @@
 import { contextBridge, ipcRenderer } from 'electron'
+
 console.log('--- PRELOAD SCRIPT STARTING ---');
 
-contextBridge.exposeInMainWorld('electronAPI', {
-    // Window controls
-    minimize: () => ipcRenderer.send('window-minimize'),
-    maximize: () => ipcRenderer.send('window-maximize'),
-    close: () => ipcRenderer.send('window-close'),
-    isMaximized: () => ipcRenderer.invoke('window-is-maximized'),
+try {
+    const api = {
+        // Window controls
+        minimize: () => ipcRenderer.send('window-minimize'),
+        maximize: () => ipcRenderer.send('window-maximize'),
+        close: () => ipcRenderer.send('window-close'),
+        isMaximized: () => ipcRenderer.invoke('window-is-maximized'),
 
-    // Auth
-    auth: {
-        login: () => ipcRenderer.invoke('auth:login'),
-        logout: () => ipcRenderer.invoke('auth:logout'),
-        getProfile: () => ipcRenderer.invoke('auth:get-profile'),
-        onDeviceCode: (callback: (data: { userCode: string, verificationUri: string }) => void) => {
-            const handler = (_event: Electron.IpcRendererEvent, data: any) => callback(data)
-            ipcRenderer.on('auth:device-code', handler)
-            return () => ipcRenderer.removeListener('auth:device-code', handler)
-        }
-    },
-
-    // Launcher
-    launcher: {
-        detectJava: () => ipcRenderer.invoke('launcher:detect-java'),
-        getInstances: () => ipcRenderer.invoke('launcher:get-instances'),
-        createInstance: (options: {
-            name: string
-            version: string
-            loader?: { type: string; version: string }
-            memory?: { min: number; max: number }
-        }) => ipcRenderer.invoke('launcher:create-instance', options),
-        deleteInstance: (instanceId: string) => ipcRenderer.invoke('launcher:delete-instance', instanceId),
-        updateInstance: (instance: unknown) => ipcRenderer.invoke('launcher:update-instance', instance),
-        launch: (options: unknown) => ipcRenderer.invoke('launcher:launch', options),
-        getWorlds: (instanceId: string) => ipcRenderer.invoke('launcher:get-worlds', instanceId),
-        getLogs: (instanceId: string) => ipcRenderer.invoke('launcher:get-logs', instanceId),
-        openFolder: (instancePath: string) => ipcRenderer.invoke('launcher:open-folder', instancePath),
-        readImage: (path: string) => ipcRenderer.invoke('launcher:read-image', path),
-        getCrashReports: (instanceId: string) => ipcRenderer.invoke('launcher:get-crash-reports', instanceId),
-        getCrashReportContent: (instanceId: string, reportName: string) => ipcRenderer.invoke('launcher:get-crash-report-content', instanceId, reportName),
-        onInstanceUpdated: (callback: (data: { instanceId: string }) => void) => {
-            const handler = (_event: Electron.IpcRendererEvent, data: any) => callback(data)
-            ipcRenderer.on('launcher:instance-updated', handler)
-            return () => ipcRenderer.removeListener('launcher:instance-updated', handler)
-        }
-    },
-
-    // Filesystem
-    selectFile: (title: string, filters?: { name: string, extensions: string[] }[]) => ipcRenderer.invoke('fs:select-file', title, filters),
-    selectDirectory: (title: string) => ipcRenderer.invoke('fs:select-directory', title),
-    listContents: (targetPath: string) => ipcRenderer.invoke('fs:list-contents', targetPath),
-    getDrives: () => ipcRenderer.invoke('fs:get-drives'),
-    getHome: () => ipcRenderer.invoke('fs:get-home'),
-
-    // Events
-    onMaximizeChange: (callback: (isMaximized: boolean) => void) => {
-        const handler = (_event: Electron.IpcRendererEvent, isMaximized: boolean) => callback(isMaximized)
-        ipcRenderer.on('window-maximize-changed', handler)
-        return () => ipcRenderer.removeListener('window-maximize-changed', handler)
-    },
-
-    // Dialog & App
-    dialog: {
-        openDirectory: (title?: string) => ipcRenderer.invoke('fs:select-directory', title)
-    },
-    app: {
-        clearCache: () => ipcRenderer.invoke('app:clear-cache'),
-        openExternal: (url: string) => ipcRenderer.invoke('app:open-external', url)
-    },
-
-    // EML Lib Integration
-    eml: {
-        launch: (config: {
-            version: string
-            loader?: { type: string; version: string }
-            memory: { min: number; max: number }
-            profile: { id: string; name: string; accessToken: string }
-            instancePath?: string
-        }) => ipcRenderer.invoke('eml:launch', config),
-
-        installJava: (version?: number) => ipcRenderer.invoke('eml:install-java', version),
-
-        downloadMinecraft: (version: string, loader?: { type: string; version: string }) =>
-            ipcRenderer.invoke('eml:download-minecraft', version, loader),
-
-        getVersions: () => ipcRenderer.invoke('eml:get-versions'),
-
-        getLoaderVersions: (loaderType: string, mcVersion: string) =>
-            ipcRenderer.invoke('eml:get-loader-versions', loaderType, mcVersion),
-
-        isVersionInstalled: (version: string) => ipcRenderer.invoke('eml:is-version-installed', version),
-
-        getPaths: () => ipcRenderer.invoke('eml:get-paths'),
-
-        getLauncherPath: () => ipcRenderer.invoke('eml:get-launcher-path'),
-        setLauncherPath: (path: string) => ipcRenderer.invoke('eml:set-launcher-path', path),
-
-        testJava: (javaPath: string) => ipcRenderer.invoke('eml:test-java', javaPath),
-
-        detectJavaVersion: (version: number) => ipcRenderer.invoke('eml:detect-java-version', version),
-
-        searchContent: (options: any) => ipcRenderer.invoke('eml:search-content', options),
-
-        installContent: (project: any, instance: any) => ipcRenderer.invoke('eml:install-content', { project, instance }),
-        detectContent: (instance: any) => ipcRenderer.invoke('eml:detect-content', { instance }),
-        importLocalModpack: (options: { filePath: string, instanceName?: string }) => ipcRenderer.invoke('eml:import-local-modpack', options),
-        scanLaunchers: (launcherId: string, launcherPath: string) => ipcRenderer.invoke('eml:scan-launchers', launcherId, launcherPath),
-
-        toggleContent: (instanceId: string, filePath: string, enable: boolean) =>
-            ipcRenderer.invoke('eml:toggle-content', instanceId, filePath, enable),
-
-        exportInstance: (instanceId: string) => ipcRenderer.invoke('eml:export-instance', instanceId),
-
-        // Progress events
-        onDownloadProgress: (callback: (progress: {
-            type: 'java' | 'minecraft' | 'assets' | 'libraries' | 'loader' | 'modpack' | 'hash' | 'game'
-            current: number
-            total: number
-            filename?: string
-            percentage: number
-        }) => void) => {
-            const handler = (_event: Electron.IpcRendererEvent, progress: any) => callback(progress)
-            ipcRenderer.on('launcher:download-progress', handler)
-            return () => ipcRenderer.removeListener('launcher:download-progress', handler)
+        // Auth
+        auth: {
+            login: () => ipcRenderer.invoke('auth:login'),
+            logout: () => ipcRenderer.invoke('auth:logout'),
+            getProfile: () => ipcRenderer.invoke('auth:get-profile'),
+            onDeviceCode: (callback: (data: { userCode: string, verificationUri: string }) => void) => {
+                const handler = (_event: Electron.IpcRendererEvent, data: any) => callback(data)
+                ipcRenderer.on('auth:device-code', handler)
+                return () => ipcRenderer.removeListener('auth:device-code', handler)
+            }
         },
 
-        onGameStarted: (callback: () => void) => {
-            const handler = () => callback()
-            ipcRenderer.on('launcher:game-started', handler)
-            return () => ipcRenderer.removeListener('launcher:game-started', handler)
+        // Launcher
+        launcher: {
+            detectJava: () => ipcRenderer.invoke('launcher:detect-java'),
+            getInstances: () => ipcRenderer.invoke('launcher:get-instances'),
+            createInstance: (options: {
+                name: string
+                version: string
+                loader?: { type: string; version: string }
+                memory?: { min: number; max: number }
+            }) => ipcRenderer.invoke('launcher:create-instance', options),
+            deleteInstance: (instanceId: string) => ipcRenderer.invoke('launcher:delete-instance', instanceId),
+            updateInstance: (instance: unknown) => ipcRenderer.invoke('launcher:update-instance', instance),
+            launch: (options: unknown) => ipcRenderer.invoke('launcher:launch', options),
+            getWorlds: (instanceId: string) => ipcRenderer.invoke('launcher:get-worlds', instanceId),
+            getLogs: (instanceId: string) => ipcRenderer.invoke('launcher:get-logs', instanceId),
+            openFolder: (instancePath: string) => ipcRenderer.invoke('launcher:open-folder', instancePath),
+            readImage: (path: string) => ipcRenderer.invoke('launcher:read-image', path),
+            getCrashReports: (instanceId: string) => ipcRenderer.invoke('launcher:get-crash-reports', instanceId),
+            getCrashReportContent: (instanceId: string, reportName: string) => ipcRenderer.invoke('launcher:get-crash-report-content', instanceId, reportName),
+            onInstanceUpdated: (callback: (data: { instanceId: string }) => void) => {
+                const handler = (_event: Electron.IpcRendererEvent, data: any) => callback(data)
+                ipcRenderer.on('launcher:instance-updated', handler)
+                return () => ipcRenderer.removeListener('launcher:instance-updated', handler)
+            }
         },
 
-        onGameClosed: (callback: (data: { exitCode: number; instanceId?: string }) => void) => {
-            const handler = (_event: Electron.IpcRendererEvent, data: any) => callback(data)
-            ipcRenderer.on('launcher:game-closed', handler)
-            return () => ipcRenderer.removeListener('launcher:game-closed', handler)
+        // Filesystem
+        selectFile: (title: string, filters?: { name: string, extensions: string[] }[]) => ipcRenderer.invoke('fs:select-file', title, filters),
+        selectDirectory: (title: string) => ipcRenderer.invoke('fs:select-directory', title),
+        listContents: (targetPath: string) => ipcRenderer.invoke('fs:list-contents', targetPath),
+        getDrives: () => ipcRenderer.invoke('fs:get-drives'),
+        getHome: () => ipcRenderer.invoke('fs:get-home'),
+
+        // Events
+        onMaximizeChange: (callback: (isMaximized: boolean) => void) => {
+            const handler = (_event: Electron.IpcRendererEvent, isMaximized: boolean) => callback(isMaximized)
+            ipcRenderer.on('window-maximize-changed', handler)
+            return () => ipcRenderer.removeListener('window-maximize-changed', handler)
         },
-        onLog: (callback: (data: { level: 'info' | 'warn' | 'error' | 'debug'; message: string, instanceId?: string }) => void) => {
-            const handler = (_event: Electron.IpcRendererEvent, data: any) => callback(data)
-            ipcRenderer.on('launcher:log', handler)
-            return () => ipcRenderer.removeListener('launcher:log', handler)
+
+        // Dialog & App
+        dialog: {
+            openDirectory: (title?: string) => ipcRenderer.invoke('fs:select-directory', title)
+        },
+        app: {
+            clearCache: () => ipcRenderer.invoke('app:clear-cache'),
+            openExternal: (url: string) => ipcRenderer.invoke('app:open-external', url)
+        },
+
+        // EML Lib Integration
+        eml: {
+            launch: (config: {
+                version: string
+                loader?: { type: string; version: string }
+                memory: { min: number; max: number }
+                profile: { id: string; name: string; accessToken: string }
+                instancePath?: string
+            }) => ipcRenderer.invoke('eml:launch', config),
+
+            installJava: (version?: number) => ipcRenderer.invoke('eml:install-java', version),
+
+            downloadMinecraft: (version: string, loader?: { type: string; version: string }) =>
+                ipcRenderer.invoke('eml:download-minecraft', version, loader),
+
+            getVersions: () => ipcRenderer.invoke('eml:get-versions'),
+
+            getLoaderVersions: (loaderType: string, mcVersion: string) =>
+                ipcRenderer.invoke('eml:get-loader-versions', loaderType, mcVersion),
+
+            isVersionInstalled: (version: string) => ipcRenderer.invoke('eml:is-version-installed', version),
+
+            getPaths: () => ipcRenderer.invoke('eml:get-paths'),
+
+            getLauncherPath: () => ipcRenderer.invoke('eml:get-launcher-path'),
+            setLauncherPath: (path: string) => ipcRenderer.invoke('eml:set-launcher-path', path),
+
+            testJava: (javaPath: string) => ipcRenderer.invoke('eml:test-java', javaPath),
+
+            detectJavaVersion: (version: number) => ipcRenderer.invoke('eml:detect-java-version', version),
+
+            searchContent: (options: any) => ipcRenderer.invoke('eml:search-content', options),
+
+            installContent: (project: any, instance: any) => ipcRenderer.invoke('eml:install-content', { project, instance }),
+            detectContent: (instance: any) => ipcRenderer.invoke('eml:detect-content', { instance }),
+            importLocalModpack: (options: { filePath: string, instanceName?: string }) => ipcRenderer.invoke('eml:import-local-modpack', options),
+            scanLaunchers: (launcherId: string, launcherPath: string) => ipcRenderer.invoke('eml:scan-launchers', launcherId, launcherPath),
+
+            toggleContent: (instanceId: string, filePath: string, enable: boolean, type: string) =>
+                ipcRenderer.invoke('eml:toggle-content', instanceId, filePath, enable, type),
+
+            deleteContent: (instanceId: string, filePath: string, type: string) =>
+                ipcRenderer.invoke('eml:delete-content', instanceId, filePath, type),
+
+            exportInstance: (instanceId: string) => ipcRenderer.invoke('eml:export-instance', instanceId),
+
+            // Progress events
+            onDownloadProgress: (callback: (progress: {
+                type: 'java' | 'minecraft' | 'assets' | 'libraries' | 'loader' | 'modpack' | 'hash' | 'game'
+                current: number
+                total: number
+                filename?: string
+                percentage: number
+            }) => void) => {
+                const handler = (_event: Electron.IpcRendererEvent, progress: any) => callback(progress)
+                ipcRenderer.on('launcher:download-progress', handler)
+                return () => ipcRenderer.removeListener('launcher:download-progress', handler)
+            },
+
+            onGameStarted: (callback: () => void) => {
+                const handler = () => callback()
+                ipcRenderer.on('launcher:game-started', handler)
+                return () => ipcRenderer.removeListener('launcher:game-started', handler)
+            },
+
+            onGameClosed: (callback: (data: { exitCode: number; instanceId?: string }) => void) => {
+                const handler = (_event: Electron.IpcRendererEvent, data: any) => callback(data)
+                ipcRenderer.on('launcher:game-closed', handler)
+                return () => ipcRenderer.removeListener('launcher:game-closed', handler)
+            },
+            onLog: (callback: (data: { level: 'info' | 'warn' | 'error' | 'debug'; message: string, instanceId?: string }) => void) => {
+                const handler = (_event: Electron.IpcRendererEvent, data: any) => callback(data)
+                ipcRenderer.on('launcher:log', handler)
+                return () => ipcRenderer.removeListener('launcher:log', handler)
+            }
         }
     }
-})
+
+    contextBridge.exposeInMainWorld('electronAPI', api)
+    console.log('--- ELECTRON API EXPOSED ---');
+
+} catch (error) {
+    console.error('--- PRELOAD ERROR ---', error);
+}
 
 export interface ElectronAPI {
     minimize: () => void
@@ -224,7 +236,8 @@ export interface ElectronAPI {
         detectContent: (instance: any) => Promise<{ success: boolean; error?: string }>
         importLocalModpack: (options: { filePath: string, instanceName?: string }) => Promise<{ success: boolean; instance?: any; error?: string }>
         scanLaunchers: (launcherId: string, launcherPath: string) => Promise<Array<{ id: string; name: string; path: string; version: string; loader: string }>>
-        toggleContent: (instanceId: string, filePath: string, enable: boolean) => Promise<{ success: boolean; error?: string }>
+        toggleContent: (instanceId: string, filePath: string, enable: boolean, type: string) => Promise<{ success: boolean; error?: string }>
+        deleteContent: (instanceId: string, filePath: string, type: string) => Promise<{ success: boolean; error?: string }>
         exportInstance: (instanceId: string) => Promise<{ success: boolean; path?: string; error?: string }>
         onDownloadProgress: (callback: (progress: {
             type: 'java' | 'minecraft' | 'assets' | 'libraries' | 'loader' | 'modpack' | 'hash' | 'game'

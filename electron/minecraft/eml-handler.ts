@@ -3,7 +3,7 @@
  * Uses EML Lib for downloading and launching Minecraft while preserving existing auth
  */
 
-import { ipcMain, app, BrowserWindow, shell, dialog } from 'electron'
+import { ipcMain, app, BrowserWindow, dialog } from 'electron'
 import * as path from 'path'
 import * as fs from 'fs'
 import EMLLib from 'eml-lib'
@@ -663,39 +663,43 @@ async function detectInstalledContent(instance: any) {
 /**
  * Toggle content (Mod, Resource Pack, etc.) by moving files
  */
-async function toggleContent(instanceId: string, filePath: string, enable: boolean) {
+async function toggleContent(instanceId: string, filePath: string, enable: boolean, targetType: string = 'mods') {
     try {
+        // Get path from launcher (which computes it dynamically)
+        const fullInstances = await minecraftLauncher.getInstances()
+        const fullInstance = fullInstances.find(i => i.id === instanceId)
+        if (!fullInstance || !fullInstance.path) throw new Error('Instance path not found')
+
+        const instancePath = fullInstance.path
+
+        // Load raw JSON for metadata updates
         const instancesJsonPath = path.join(LPATH, 'instances', 'instances.json')
         if (!fs.existsSync(instancesJsonPath)) throw new Error('instances.json not found')
 
         const content = fs.readFileSync(instancesJsonPath, 'utf-8')
         const instances = JSON.parse(content)
         const instance = instances.find((i: any) => i.id === instanceId)
-        if (!instance) throw new Error('Instance not found')
-
-        const instancePath = instance.path
-        if (!instancePath || !fs.existsSync(instancePath)) throw new Error('Instance path not found')
+        if (!instance) throw new Error('Instance not found in registry')
 
         // Resolve folders
-        const modsDir = path.join(instancePath, 'mods')
-        const disabledModsDir = path.join(instancePath, 'disabledmods')
+        const targetDir = path.join(instancePath, targetType)
+        const disabledDir = path.join(instancePath, `disabled${targetType}`)
 
         const fileName = path.basename(filePath)
 
-        // Only handle mods for now as requested
         let sourcePath: string
         let destPath: string
 
         if (enable) {
             // Moving from disabled to enabled
-            sourcePath = path.join(disabledModsDir, fileName)
-            destPath = path.join(modsDir, fileName)
-            if (!fs.existsSync(modsDir)) fs.mkdirSync(modsDir, { recursive: true })
+            sourcePath = path.join(disabledDir, fileName)
+            destPath = path.join(targetDir, fileName)
+            if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir, { recursive: true })
         } else {
             // Moving from enabled to disabled
-            sourcePath = path.join(modsDir, fileName)
-            destPath = path.join(disabledModsDir, fileName)
-            if (!fs.existsSync(disabledModsDir)) fs.mkdirSync(disabledModsDir, { recursive: true })
+            sourcePath = path.join(targetDir, fileName)
+            destPath = path.join(disabledDir, fileName)
+            if (!fs.existsSync(disabledDir)) fs.mkdirSync(disabledDir, { recursive: true })
         }
 
         if (fs.existsSync(sourcePath)) {
@@ -719,6 +723,17 @@ async function toggleContent(instanceId: string, filePath: string, enable: boole
             // Check if it's already in the destination?
             if (fs.existsSync(destPath)) {
                 Logger.info(`[Toggle] File already in target location: ${fileName}`)
+                // Still update metadata to ensure consistency
+                const allLists = ['mods', 'resourcepacks', 'shaderpacks', 'datapacks']
+                allLists.forEach(listName => {
+                    if (instance[listName]) {
+                        const mod = instance[listName].find((m: any) => m.fileName === fileName)
+                        if (mod) {
+                            mod.enabled = enable
+                        }
+                    }
+                })
+                fs.writeFileSync(instancesJsonPath, JSON.stringify(instances, null, 2), 'utf-8')
                 return { success: true }
             }
             throw new Error(`Source file not found: ${sourcePath}`)
@@ -726,6 +741,70 @@ async function toggleContent(instanceId: string, filePath: string, enable: boole
     } catch (error) {
         Logger.error(`[Toggle] Failed: ${error}`)
         throw error
+    }
+}
+
+/**
+ * Delete content file
+ */
+async function deleteContent(instanceId: string, filePath: string, targetType: string = 'mods') {
+    try {
+        // Get path from launcher
+        const fullInstances = await minecraftLauncher.getInstances()
+        const fullInstance = fullInstances.find(i => i.id === instanceId)
+        if (!fullInstance || !fullInstance.path) throw new Error('Instance path not found')
+
+        const instancePath = fullInstance.path
+
+        // Load raw JSON for metadata updates
+        const instancesJsonPath = path.join(LPATH, 'instances', 'instances.json')
+        if (!fs.existsSync(instancesJsonPath)) throw new Error('instances.json not found')
+
+        const content = fs.readFileSync(instancesJsonPath, 'utf-8')
+        const instances = JSON.parse(content)
+        const instance = instances.find((i: any) => i.id === instanceId)
+        if (!instance) throw new Error('Instance not found')
+
+        // Check enabled and disabled folders
+        const targetDir = path.join(instancePath, targetType)
+        const disabledDir = path.join(instancePath, `disabled${targetType}`)
+
+        const fileName = path.basename(filePath)
+        const enabledPath = path.join(targetDir, fileName)
+        const disabledPath = path.join(disabledDir, fileName)
+
+        let deleted = false
+
+        if (fs.existsSync(enabledPath)) {
+            fs.unlinkSync(enabledPath)
+            deleted = true
+        }
+
+        if (fs.existsSync(disabledPath)) {
+            fs.unlinkSync(disabledPath)
+            deleted = true
+        }
+
+        if (deleted) {
+            Logger.success(`[Delete] Removed file: ${fileName}`)
+
+            // Update instances.json
+            const allLists = ['mods', 'resourcepacks', 'shaderpacks', 'datapacks']
+            allLists.forEach(listName => {
+                if (instance[listName]) {
+                    instance[listName] = instance[listName].filter((m: any) => m.fileName !== fileName)
+                }
+            })
+
+            fs.writeFileSync(instancesJsonPath, JSON.stringify(instances, null, 2), 'utf-8')
+            return { success: true }
+        } else {
+            return { success: false, error: 'File not found' }
+        }
+
+    } catch (error) {
+        Logger.error(`[Delete] Failed: ${error}`)
+        return { success: false, error: String(error) }
     }
 }
 
@@ -741,8 +820,13 @@ async function exportInstance(instanceId: string) {
         const instance = instances.find((i: any) => i.id === instanceId)
         if (!instance) throw new Error('Instance not found')
 
-        const instancePath = instance.path
-        if (!instancePath || !fs.existsSync(instancePath)) throw new Error('Instance path not found')
+        // Fix: Get instance with calculated path from launcher
+        const fullInstances = await minecraftLauncher.getInstances()
+        const fullInstance = fullInstances.find(i => i.id === instanceId)
+        if (!fullInstance || !fullInstance.path) throw new Error('Instance path not found')
+
+        const instancePath = fullInstance.path
+        if (!fs.existsSync(instancePath)) throw new Error('Instance path not found on disk')
 
         // 1. Prompt for save location
         // Note: Using await with dialog.showSaveDialog which returns a promise in Electron
@@ -769,7 +853,6 @@ async function exportInstance(instanceId: string) {
             }
         }
 
-        // Add loader dependency
         if (instance.loader) {
             const loaderIdMap: Record<string, string> = {
                 'fabric': 'fabric-loader',
@@ -779,6 +862,26 @@ async function exportInstance(instanceId: string) {
             }
             const loaderId = loaderIdMap[instance.loader.type] || instance.loader.type
             manifest.dependencies[loaderId] = instance.loader.version
+        }
+
+        // Add Icon to Export
+        if (instance.icon) {
+            try {
+                let iconBuffer: Buffer | null = null
+                if (instance.icon.startsWith('data:')) {
+                    const base64Data = instance.icon.split(';base64,').pop()
+                    if (base64Data) iconBuffer = Buffer.from(base64Data, 'base64')
+                } else if (fs.existsSync(instance.icon)) {
+                    iconBuffer = fs.readFileSync(instance.icon)
+                }
+
+                if (iconBuffer) {
+                    zip.addFile('icon.png', iconBuffer)
+                    Logger.info(`[Export] Added icon.png to archive`)
+                }
+            } catch (e) {
+                Logger.warn(`[Export] Failed to add icon to archive: ${e}`)
+            }
         }
 
         // 2. Process mods and other files
@@ -1042,8 +1145,11 @@ async function installContent(project: any, instance: any, visitedDependencies: 
  */
 async function installModpack(projectId: string, projectTitle: string, instance: any) {
     try {
-        const sanitizedName = minecraftLauncher.sanitizeInstanceName(instance.name)
-        const instancePath = instance.path || path.join(LPATH, 'instances', sanitizedName)
+        // Ensure we have the correct path
+        const fullInstances = await minecraftLauncher.getInstances()
+        const fullInstance = fullInstances.find(i => i.id === instance.id)
+        // Use let because we might rename the folder
+        let instancePath = fullInstance?.path || path.join(LPATH, 'instances', minecraftLauncher.sanitizeInstanceName(instance.name))
 
         if (!fs.existsSync(TEMP_PATH)) {
             fs.mkdirSync(TEMP_PATH, { recursive: true })
@@ -1110,7 +1216,28 @@ async function installModpack(projectId: string, projectTitle: string, instance:
                 const instances = JSON.parse(fs.readFileSync(instancesJsonPath, 'utf-8'))
                 const idx = instances.findIndex((i: any) => i.id === instance.id)
                 if (idx !== -1) {
-                    instances[idx].name = project.title || projectTitle
+                    const oldName = instances[idx].name
+                    const newName = project.title || projectTitle
+
+                    // Rename folder if name changed to keep launcher in sync
+                    if (oldName !== newName) {
+                        const oldPath = path.join(LPATH, 'instances', minecraftLauncher.sanitizeInstanceName(oldName))
+                        const newPath = path.join(LPATH, 'instances', minecraftLauncher.sanitizeInstanceName(newName))
+
+                        // Only rename if old path is what we are currently using and it exists
+                        // and new path doesn't exist
+                        if (path.normalize(instancePath) === path.normalize(oldPath) && fs.existsSync(oldPath) && !fs.existsSync(newPath)) {
+                            try {
+                                fs.renameSync(oldPath, newPath)
+                                instancePath = newPath
+                                Logger.info(`[Modpack] Renamed instance folder: ${oldPath} -> ${newPath}`)
+                            } catch (err) {
+                                Logger.warn(`[Modpack] Failed to rename instance folder: ${err}`)
+                            }
+                        }
+                    }
+
+                    instances[idx].name = newName
                     instances[idx].iconUrl = project.icon_url
 
                     // Parse dependencies from manifest to set Game Version and Loader
@@ -2686,8 +2813,13 @@ export function registerEMLHandlers() {
     })
 
     // Toggle Content (Mod enable/disable)
-    ipcMain.handle('eml:toggle-content', async (_, instanceId: string, filePath: string, enable: boolean) => {
-        return await toggleContent(instanceId, filePath, enable)
+    ipcMain.handle('eml:toggle-content', async (_, instanceId: string, filePath: string, enable: boolean, type: string) => {
+        return await toggleContent(instanceId, filePath, enable, type)
+    })
+
+    // Delete Content
+    ipcMain.handle('eml:delete-content', async (_, instanceId: string, filePath: string, type: string) => {
+        return await deleteContent(instanceId, filePath, type)
     })
 
     // Export Instance
@@ -2763,6 +2895,22 @@ export function registerEMLHandlers() {
                         instances[idx].loader = { type: 'forge', version: manifest.dependencies['forge'] }
                     }
                 }
+
+                // Import Icon from MrPack
+                const iconPng = path.join(extractPath, 'icon.png')
+                const iconWebp = path.join(extractPath, 'icon.webp')
+                if (fs.existsSync(iconPng)) {
+                    try {
+                        const iconData = fs.readFileSync(iconPng).toString('base64')
+                        instances[idx].icon = `data:image/png;base64,${iconData}`
+                    } catch (e) { Logger.warn(`[Import] Failed to read icon.png: ${e}`) }
+                } else if (fs.existsSync(iconWebp)) {
+                    try {
+                        const iconData = fs.readFileSync(iconWebp).toString('base64')
+                        instances[idx].icon = `data:image/webp;base64,${iconData}`
+                    } catch (e) { Logger.warn(`[Import] Failed to read icon.webp: ${e}`) }
+                }
+
                 fs.writeFileSync(instancesJsonPath, JSON.stringify(instances, null, 2))
             }
 
@@ -2809,6 +2957,17 @@ export function registerEMLHandlers() {
             const overridesPath = path.join(extractPath, 'overrides')
             if (fs.existsSync(overridesPath)) {
                 copyFolderRecursive(overridesPath, instancePath)
+            }
+
+            // 6. Auto-detect installed content (Metadata)
+            Logger.info('[Import] Running metadata detection...')
+            try {
+                // Refresh instance object to include correct path/details for detection
+                const freshInstance = { ...instance, path: instancePath }
+                await detectInstalledContent(freshInstance)
+                Logger.info('[Import] Metadata detection completed.')
+            } catch (e) {
+                Logger.warn(`[Import] Metadata detection warning: ${e}`)
             }
 
             return { success: true, instance }
@@ -2888,15 +3047,7 @@ export function registerEMLHandlers() {
         return found
     })
 
-    // Open External URL
-    ipcMain.handle('app:open-external', async (_, url: string) => {
-        try {
-            await shell.openExternal(url)
-            return { success: true }
-        } catch (error) {
-            return { success: false, error: String(error) }
-        }
-    })
+
 }
 
 

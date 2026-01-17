@@ -252,6 +252,12 @@
             "refresh": "تحديث"
         },
         "search_placeholder": "بحث في المشاريع..."
+        ,"delete_modal": {
+            "title": "حذف المحتوى",
+            "message": "هل أنت متأكد من أنك تريد حذف {name}؟ لا يمكن التراجع عن هذا الإجراء.",
+            "confirm": "حذف",
+            "cancel": "إلغاء"
+        }
     },
     "create_instance": {
         "tabs": {

@@ -252,6 +252,12 @@
             "refresh": "Atualizar"
         },
         "search_placeholder": "Buscar projetos..."
+        ,"delete_modal": {
+            "title": "Excluir conteúdo",
+            "message": "Tem certeza de que deseja excluir {name}? Esta ação não pode ser desfeita.",
+            "confirm": "Excluir",
+            "cancel": "Cancelar"
+        }
     },
     "create_instance": {
         "tabs": {

@@ -252,6 +252,12 @@
             "refresh": "Actualiser"
         },
         "search_placeholder": "Rechercher projets..."
+        ,"delete_modal": {
+            "title": "Supprimer le contenu",
+            "message": "Êtes-vous sûr de vouloir supprimer {name} ? Cette action est irréversible.",
+            "confirm": "Supprimer",
+            "cancel": "Annuler"
+        }
     },
     "create_instance": {
         "tabs": {

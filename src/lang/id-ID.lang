@@ -252,6 +252,12 @@
             "refresh": "Segarkan"
         },
         "search_placeholder": "Cari proyek..."
+        ,"delete_modal": {
+            "title": "Hapus Konten",
+            "message": "Apakah Anda yakin ingin menghapus {name}? Tindakan ini tidak dapat dibatalkan.",
+            "confirm": "Hapus",
+            "cancel": "Batal"
+        }
     },
     "create_instance": {
         "tabs": {

@@ -26,7 +26,7 @@ const renderApp = () => {
     );
 };
 let retryCount = 0;
-const maxRetries = 200; // Wait up to 1 second (100 * 10ms)
+const maxRetries = 1000; // Wait up to 10 seconds (1000 * 10ms)
 
 const checkElectronAPI = setInterval(() => {
     retryCount++;

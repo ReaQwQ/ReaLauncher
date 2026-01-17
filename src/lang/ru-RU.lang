@@ -252,6 +252,12 @@
             "refresh": "Обновить"
         },
         "search_placeholder": "Поиск проектов..."
+        ,"delete_modal": {
+            "title": "Удалить контент",
+            "message": "Вы уверены, что хотите удалить {name}? Это действие нельзя отменить.",
+            "confirm": "Удалить",
+            "cancel": "Отмена"
+        }
     },
     "create_instance": {
         "tabs": {

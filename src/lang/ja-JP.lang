@@ -212,7 +212,12 @@
             "mod": "Mod",
             "resourcepack": "リソースパック",
             "datapack": "データパック",
-            "shader": "シェーダー"
+            "shader": "シェーダー",
+            "fabric": "Fabric",
+            "forge": "Forge",
+            "neoforge": "NeoForge",
+            "quilt": "Quilt",
+            "legacy-fabric": "Legacy Fabric"
         },
         "sort": {
             "relevance": "関連度順",
@@ -253,6 +258,12 @@
             "refresh": "更新"
         },
         "search_placeholder": "プロジェクトを検索..."
+        ,"delete_modal": {
+            "title": "コンテンツの削除",
+            "message": "本当に {name} を削除しますか？この操作は元に戻せません。",
+            "confirm": "削除",
+            "cancel": "キャンセル"
+        }
     },
     "create_instance": {
         "tabs": {

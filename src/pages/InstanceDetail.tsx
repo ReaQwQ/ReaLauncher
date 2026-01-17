@@ -11,6 +11,7 @@ import { useNotificationStore } from '../stores/notificationStore'
 import { useUIStore } from '../stores/uiStore'
 import InstanceSettingsModal from '../components/modals/InstanceSettingsModal'
 import FileBrowserModal from '../components/modals/FileBrowserModal'
+import ConfirmationModal from '../components/modals/ConfirmationModal'
 import { GameConsole } from '../components/GameConsole'
 
 interface MinecraftInstance {
@@ -112,6 +113,18 @@ function CustomSelect({ label, value, options, onChange, className = "" }: Custo
     )
 }
 
+
+const getSafeIconUrl = (url: string | undefined) => {
+    if (!url) return undefined
+    if (url.startsWith('http') || url.startsWith('data:')) return url
+    if (url.startsWith('file:///')) return url.replace('file:///', 'media://')
+    // Handle Windows paths
+    if (url.match(/^[a-zA-Z]:\\/) || url.startsWith('/') || url.startsWith('\\')) {
+        return `media://${url.replace(/\\/g, '/')}`
+    }
+    return url
+}
+
 export default function InstanceDetail() {
     const { instanceId } = useParams<{ instanceId: string }>()
     const navigate = useNavigate()
@@ -175,6 +188,8 @@ export default function InstanceDetail() {
         const unsubscribeUpdate = (window as any).electronAPI?.launcher?.onInstanceUpdated?.((data: any) => {
             if (data.instanceId === instance.id) {
                 loadInstance()
+                // Auto-reset filter on external update (e.g. modpack install) to ensure content is visible
+                setContentFilter('all')
             }
         })
 
@@ -526,7 +541,7 @@ export default function InstanceDetail() {
         else if (item.type === 'datapacks') setDatapacks(updateState)
 
         try {
-            const result = await window.electronAPI.eml.toggleContent(instance.id, item.fileName, newEnabled)
+            const result = await window.electronAPI.eml.toggleContent(instance.id, item.fileName, newEnabled, item.type)
             if (result && !result.success) {
                 throw new Error(result.error || 'Failed to toggle content')
             }
@@ -546,14 +561,77 @@ export default function InstanceDetail() {
         }
     }
 
-    const removeMod = (modId: string) => {
-        // Find which list it's in and remove it
-        setInstalledMods(prev => prev.filter(mod => mod.id !== modId))
-        setResourcePacks(prev => prev.filter(mod => mod.id !== modId))
-        setShaderPacks(prev => prev.filter(mod => mod.id !== modId))
-        setDatapacks(prev => prev.filter(mod => mod.id !== modId))
+    const [modToDelete, setModToDelete] = useState<{
+        id: string
+        name: string
+        fileName: string
+        type: string
+    } | null>(null)
 
-        // Backend removal could be added here later
+    const handleDeleteConfirm = async () => {
+        if (!instance || !modToDelete) return
+
+        // Find which list it's in to restore if needed (Optimistic)
+        const previousState = {
+            mods: [...installedMods],
+            resourcepacks: [...resourcePacks],
+            shaders: [...shaderPacks],
+            datapacks: [...datapacks]
+        }
+
+        // Optimistic Remove
+        setInstalledMods(prev => prev.filter(mod => mod.id !== modToDelete.id))
+        setResourcePacks(prev => prev.filter(mod => mod.id !== modToDelete.id))
+        setShaderPacks(prev => prev.filter(mod => mod.id !== modToDelete.id))
+        setDatapacks(prev => prev.filter(mod => mod.id !== modToDelete.id))
+
+        // Backend removal
+        try {
+            const result = await window.electronAPI.eml.deleteContent(instance.id, modToDelete.fileName, modToDelete.type)
+            if (!result.success) {
+                throw new Error(result.error || 'Failed to delete file')
+            }
+            addNotification({
+                type: 'success',
+                title: 'Deleted',
+                message: `Successfully deleted ${modToDelete.name}`
+            })
+        } catch (error) {
+            console.error('Delete failed:', error)
+            addNotification({
+                type: 'error',
+                title: 'Delete Failed',
+                message: String(error)
+            })
+            // Revert on error
+            setInstalledMods(previousState.mods)
+            setResourcePacks(previousState.resourcepacks)
+            setShaderPacks(previousState.shaders)
+            setDatapacks(previousState.datapacks)
+        }
+        setModToDelete(null)
+    }
+
+    const removeMod = (modId: string) => {
+        if (!instance) return
+
+        // Find the item to get its type and filename
+        const allItems = [
+            ...installedMods.map(i => ({ ...i, type: 'mods' })),
+            ...resourcePacks.map(i => ({ ...i, type: 'resourcepacks' })),
+            ...shaderPacks.map(i => ({ ...i, type: 'shaderpacks' })),
+            ...datapacks.map(i => ({ ...i, type: 'datapacks' }))
+        ]
+
+        const item = allItems.find(m => m.id === modId)
+        if (!item) return
+
+        setModToDelete({
+            id: modId,
+            name: item.name,
+            fileName: item.fileName,
+            type: item.type
+        })
     }
 
     if (!instance) {
@@ -893,7 +971,7 @@ export default function InstanceDetail() {
                                         {/* Icon + Name */}
                                         <div className="flex-1 flex items-center gap-3">
                                             {mod.iconUrl ? (
-                                                <img src={mod.iconUrl} alt={mod.name} className="w-10 h-10 rounded shrink-0" />
+                                                <img src={getSafeIconUrl(mod.iconUrl)} alt={mod.name} className="w-10 h-10 rounded shrink-0" />
                                             ) : (
                                                 <div className="w-10 h-10 rounded bg-dark-800 flex items-center justify-center text-dark-500 shrink-0 border border-dark-700">
                                                     <Box size={20} />
@@ -1554,6 +1632,16 @@ export default function InstanceDetail() {
                     />
                 )
             }
+            <ConfirmationModal
+                isOpen={!!modToDelete}
+                onClose={() => setModToDelete(null)}
+                onConfirm={handleDeleteConfirm}
+                title={t('instance_detail.delete_modal.title')}
+                message={t('instance_detail.delete_modal.message', { name: modToDelete?.name || '' })}
+                confirmText={t('instance_detail.delete_modal.confirm')}
+                cancelText={t('instance_detail.delete_modal.cancel')}
+                isDestructive={true}
+            />
             {
                 showSettingsModal && instance && (
                     <InstanceSettingsModal

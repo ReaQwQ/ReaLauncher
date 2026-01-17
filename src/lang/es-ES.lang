@@ -252,6 +252,12 @@
             "refresh": "Actualizar"
         },
         "search_placeholder": "Buscar proyectos..."
+        ,"delete_modal": {
+            "title": "Eliminar contenido",
+            "message": "¿Estás seguro de que quieres eliminar {name}? Esta acción no se puede deshacer.",
+            "confirm": "Eliminar",
+            "cancel": "Cancelar"
+        }
     },
     "create_instance": {
         "tabs": {

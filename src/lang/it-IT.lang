@@ -252,6 +252,12 @@
             "refresh": "Aggiorna"
         },
         "search_placeholder": "Cerca progetti..."
+        ,"delete_modal": {
+            "title": "Elimina contenuto",
+            "message": "Sei sicuro di voler eliminare {name}? Questa azione non può essere annullata.",
+            "confirm": "Elimina",
+            "cancel": "Annulla"
+        }
     },
     "create_instance": {
         "tabs": {

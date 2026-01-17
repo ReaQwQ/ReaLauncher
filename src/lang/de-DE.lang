@@ -252,6 +252,12 @@
             "refresh": "Aktualisieren"
         },
         "search_placeholder": "Projekte durchsuchen..."
+        ,"delete_modal": {
+            "title": "Inhalt löschen",
+            "message": "Möchten Sie {name} wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+            "confirm": "Löschen",
+            "cancel": "Abbrechen"
+        }
     },
     "create_instance": {
         "tabs": {

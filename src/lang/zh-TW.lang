@@ -252,6 +252,12 @@
             "refresh": "重新整理"
         },
         "search_placeholder": "搜尋專案..."
+        ,"delete_modal": {
+            "title": "刪除內容",
+            "message": "您確定要刪除 {name} 嗎？此操作無法復原。",
+            "confirm": "刪除",
+            "cancel": "取消"
+        }
     },
     "create_instance": {
         "tabs": {

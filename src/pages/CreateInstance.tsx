@@ -181,7 +181,7 @@ export default function CreateInstance() {
             const removeListener = window.electronAPI.eml.onDownloadProgress((progress: any) => {
                 if (progress.filename) setImportProgress(progress.filename)
             })
-            const result = await (window.electronAPI as any).importLocalModpack({ filePath })
+            const result = await window.electronAPI.eml.importLocalModpack({ filePath })
             removeListener()
             if (result.success) {
                 addInstance(result.instance)

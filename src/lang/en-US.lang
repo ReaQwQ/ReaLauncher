@@ -212,7 +212,12 @@
             "mod": "Mods",
             "resourcepack": "Resource Packs",
             "datapack": "Data Packs",
-            "shader": "Shaders"
+            "shader": "Shaders",
+            "fabric": "Fabric",
+            "forge": "Forge",
+            "neoforge": "NeoForge",
+            "quilt": "Quilt",
+            "legacy-fabric": "Legacy Fabric"
         },
         "sort": {
             "relevance": "Relevance",
@@ -253,6 +258,12 @@
             "refresh": "Refresh"
         },
         "search_placeholder": "Search projects..."
+        ,"delete_modal": {
+            "title": "Delete Content",
+            "message": "Are you sure you want to delete {name}? This action cannot be undone.",
+            "confirm": "Delete",
+            "cancel": "Cancel"
+        }
     },
     "create_instance": {
         "tabs": {

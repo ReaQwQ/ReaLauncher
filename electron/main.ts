@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, shell, dialog, Menu } from 'electron'
+import { app, BrowserWindow, ipcMain, shell, dialog, Menu, protocol, net } from 'electron'
 import 'dotenv/config'
 import * as path from 'path'
 import * as fs from 'fs'
@@ -29,6 +29,11 @@ const ORIGINAL_USER_DATA = userDataPath
 
 const execAsync = promisify(exec)
 
+// Register custom protocol privileges
+protocol.registerSchemesAsPrivileged([
+    { scheme: 'media', privileges: { secure: true, supportFetchAPI: true, standard: true, bypassCSP: true, stream: true } }
+])
+
 const isDev = !app.isPackaged
 
 
@@ -52,7 +57,7 @@ function createWindow() {
             })(),
             contextIsolation: true,
             nodeIntegration: false,
-            devTools: false,
+            devTools: isDev,
             sandbox: false
         }
     })
@@ -128,6 +133,12 @@ if (!gotTheLock) {
         }
     })
     app.whenReady().then(async () => {
+        // Register 'media' protocol for loading local resources
+        protocol.handle('media', (req) => {
+            const pathToServe = decodeURIComponent(req.url.slice('media://'.length))
+            return net.fetch('file:///' + pathToServe)
+        })
+
         // Set About panel
         app.setAboutPanelOptions({
             applicationName: 'ReaLauncher',

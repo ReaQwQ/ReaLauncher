@@ -1,7 +1,7 @@
 import { exec, spawn } from 'child_process'
 import * as fs from 'fs'
 import * as path from 'path'
-import { app, ipcMain, BrowserWindow, dialog } from 'electron'
+import { app, ipcMain, BrowserWindow, dialog, shell } from 'electron'
 import { promisify } from 'util'
 import { downloadVanillaVersion, prepareCustomVersion } from './eml-handler'
 
@@ -499,7 +499,6 @@ export function registerLauncherHandlers(): void {
     })
 
     ipcMain.handle('launcher:open-folder', async (_, instancePath: string) => {
-        const { shell } = require('electron')
         try {
             await shell.openPath(instancePath)
             return { success: true }

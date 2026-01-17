@@ -42,7 +42,7 @@ export type Language =
 interface UIState {
     language: Language
     setLanguage: (lang: Language) => void
-    t: (path: string) => string
+    t: (path: string, params?: Record<string, string>) => string
 
     runningInstances: number
     setRunningInstances: (count: number) => void
@@ -85,28 +85,43 @@ export const useUIStore = create<UIState>()(
         (set, get) => ({
             language: 'ja-JP',
             setLanguage: (lang) => set({ language: lang }),
-            t: (path) => {
+            t: (path, params) => {
                 const lang = get().language
                 if (!lang || !translations[lang]) return path
 
                 const keys = path.split('.')
                 let current = translations[lang]
+                let found = true
 
                 for (const key of keys) {
                     if (current === undefined || current[key] === undefined) {
-                        // Fallback to English
-                        let englishCurrent = translations['en-US']
-                        for (const eKey of keys) {
-                            if (englishCurrent[eKey] === undefined) return path
-                            englishCurrent = englishCurrent[eKey]
-                        }
-                        return typeof englishCurrent === 'string' ? englishCurrent : path
+                        found = false
+                        break
                     }
                     current = current[key]
                 }
 
-                return typeof current === 'string' ? current : path
+                if (!found) {
+                    // Fallback to English
+                    let englishCurrent = translations['en-US']
+                    for (const eKey of keys) {
+                        if (englishCurrent === undefined || englishCurrent[eKey] === undefined) {
+                            return path
+                        }
+                        englishCurrent = englishCurrent[eKey]
+                    }
+                    current = englishCurrent
+                }
 
+                let result = typeof current === 'string' ? current : path
+
+                if (params && typeof result === 'string') {
+                    Object.entries(params).forEach(([key, value]) => {
+                        result = result.replace(new RegExp(`{${key}}`, 'g'), value)
+                    })
+                }
+
+                return result
             },
 
 

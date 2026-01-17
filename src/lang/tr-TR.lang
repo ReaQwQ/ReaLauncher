@@ -252,6 +252,12 @@
             "refresh": "Yenile"
         },
         "search_placeholder": "Projeleri ara..."
+        ,"delete_modal": {
+            "title": "İçeriği Sil",
+            "message": "{name} öğesini silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.",
+            "confirm": "Sil",
+            "cancel": "İptal"
+        }
     },
     "create_instance": {
         "tabs": {
