@@ -55,7 +55,7 @@ If you want to build the project from source, please follow the steps below.
 
 ### ⚠️ Important
 
-To Use CurseForge project, you **must** get CurseForge API Key and Use [CurseForgeProxyServer](https://github.com/ReaQwQ/CurseForgeProxyServer)
+To Use CurseForge project, you **must** get CurseForge API Key and Use **[CurseForgeProxyServer](https://github.com/ReaQwQ/CurseForgeProxyServer)**
 
 To build this project, you **must** enable Windows Developer Mode.
 The build process uses symbolic links (specifically for `winCodeSign`), which requires this setting.
